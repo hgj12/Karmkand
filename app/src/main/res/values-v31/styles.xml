@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+: use launcher artwork directly (no extra icon circle behind a square asset) -->
+    <style name="Theme.Karmkand.Splash" parent="Theme.SplashScreen">
+
+        <!-- ✅ Background color shown during system splash (before your Activity loads) -->
+        <!-- Use your primary color or match your bg image's dominant color -->
+        <item name="windowSplashScreenBackground">@color/primary</item>
+
+        <!-- ✅ Hide the system splash icon completely -->
+        <!-- Set to a fully transparent drawable so nothing shows on system splash -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/bg1</item>
+
+        <!-- ✅ Zero duration — dismiss system splash as fast as possible -->
+        <item name="windowSplashScreenAnimationDuration">0</item>
+
+        <!-- ✅ Switch to your real app theme after splash Activity finishes -->
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+
+    </style>
+</resources>

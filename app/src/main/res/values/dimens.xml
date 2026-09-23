@@ -1,0 +1,58 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="nav_drawer_width">300dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="padding_verysmall">9dp</dimen>
+    <dimen name="padding_small">12dp</dimen>
+    <dimen name="padding_medium">14dp</dimen>
+    <dimen name="padding_large">18dp</dimen>
+    <dimen name="padding_xlarge">22dp</dimen>
+    <dimen name="padding_xxlarge">30dp</dimen>
+    <dimen name="padding_xxxlarge">40dp</dimen>
+
+
+    <dimen name="title_large">22sp</dimen>
+    <dimen name="title_medium">20sp</dimen>
+    <dimen name="title_small">18sp</dimen>
+    <dimen name="title_verysmall">16sp</dimen>
+
+    <dimen name="lef_margin">6dp</dimen>
+
+
+    <dimen name="btn_height">50dp</dimen>
+
+    <dimen name="separator">0.5dp</dimen>
+
+    <dimen name="dim_1">1dp</dimen>
+    <dimen name="dim_2">2dp</dimen>
+    <dimen name="dim_4">4dp</dimen>
+    <dimen name="dim_6">6dp</dimen>
+    <dimen name="dim_8">8dp</dimen>
+    <dimen name="dim_10">10dp</dimen>
+    <dimen name="dim_12">12dp</dimen>
+    <dimen name="dim_14">14dp</dimen>
+    <dimen name="dim_16">16dp</dimen>
+    <dimen name="dim_18">18dp</dimen>
+    <dimen name="dim_20">20dp</dimen>
+    <dimen name="dim_30">30dp</dimen>
+    <dimen name="dim_40">40dp</dimen>
+
+    <!-- Design System Spacing & Dimensions -->
+    <dimen name="card_corner_radius">14dp</dimen>
+    <dimen name="btn_corner_radius">14dp</dimen>
+    <dimen name="margin_list_item">16dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">24dp</dimen>
+    <dimen name="spacing_xxl">32dp</dimen>
+    <dimen name="reading_line_spacing">3dp</dimen>
+    <dimen name="max_content_width">480dp</dimen>
+    <dimen name="empty_state_icon_size">64dp</dimen>
+</resources>

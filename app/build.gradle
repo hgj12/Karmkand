@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdk 36
+    namespace 'com.karmkand.app'
+
+    defaultConfig {
+        applicationId "com.karmkand.app"
+        minSdk 24
+        targetSdk 36
+        versionCode 7
+        versionName '1.4.0'
+    }
+
+    buildTypes {
+        debug {
+            resValue "string", "app_id", "ca-app-pub-3940256099942544~3347511713"
+            resValue "string", "banner_ad_unit_id", "ca-app-pub-3940256099942544/6300978111"
+            resValue "string", "interestial_ad_unit_id", "ca-app-pub-3940256099942544/1033173712"
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            resValue "string", "app_id", "ca-app-pub-3604956385463792~4958278989"
+            resValue "string", "banner_ad_unit_id", "ca-app-pub-3604956385463792/9827462284"
+            resValue "string", "interestial_ad_unit_id", "ca-app-pub-3604956385463792/7201298948"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    // Core AndroidX and Material Design
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.core:core-splashscreen:1.2.0'
+
+    // Layouts and Widgets
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0' // Note: This is stable and rarely changes
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+
+    // Google Play Services (AdMob)
+    // Note: Version 23+ requires minSdk 23 and compileSdk 34+
+    implementation 'com.google.android.gms:play-services-ads:25.0.0'
+
+    // Modern Replacement for support-annotations:28.0.0
+    implementation 'androidx.annotation:annotation:1.9.1'
+}

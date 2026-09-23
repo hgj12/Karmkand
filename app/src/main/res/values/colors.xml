@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#9e0707</color>
+    <color name="ic_launcher_background">#9e0707</color>
+    <color name="primary_dark">#960404</color>
+    <color name="accent">#FF9D0A</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="item_bg">#640d0d0d</color>
+    <color name="item_border">#96ffffff</color>
+
+    <!-- Modern Spiritual Design System Tokens -->
+    <color name="primary_container">#520808</color>
+    <color name="gold_accent">#FFB300</color>
+    <color name="gold_light">#FFE082</color>
+    <color name="surface_dark">#D9161010</color>
+    <color name="surface_card">#B31A1212</color>
+    <color name="card_stroke">#33FFD54F</color>
+    <color name="card_stroke_focused">#80FFD54F</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#E8DFDF</color>
+    <color name="text_tertiary">#B8A8A8</color>
+    <color name="text_gold">#FFD54F</color>
+    <color name="divider_gold">#40FFD54F</color>
+    <color name="ripple_light">#33FFFFFF</color>
+    <color name="ripple_gold">#33FFD54F</color>
+
+    <color name="center_color">#ebf7f7f7</color>
+    <color name="start_color">#e1ffffff</color>
+    <color name="end_color">#e1f4f4f4</color>
+</resources>

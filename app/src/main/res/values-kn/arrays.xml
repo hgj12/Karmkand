@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mantra_array_title">
+        <item>". ರುದ್ರಿ ಪಾಠ ."</item>
+        <item>". ಪ್ರಣಮ್ಯ ಶಿರಸಾ ದೇವಂ ."</item>
+        <item>". ಶಿವ ತಾಂಡವ ಸ್ತೋತ್ರಮ್ ."</item>
+        <item>". ಶಿವ ಮಹಿಮ್ನ ಸ್ತೋತ್ರಮ್ ."</item>
+        <item>". ಶ್ರೀ ರುದ್ರಾಷ್ಟಕಮ್ ."</item>
+        <item>". ಲಿಂಗಾಷ್ಟಕಮ್ ."</item>
+        <item>". ಬಿಲ್ವಾಷ್ಟಕಮ್ ."</item>
+        <item>". ಶಿವಾಷ್ಟಕಮ್ ."</item>
+        <item>". ಶಿವ ಪಂಚಾಕ್ಷರ ಸ್ತೋತ್ರಮ್ ."</item>
+        <item>". ಶ್ರೀ ಸರಸ್ವತಿ ಸ್ತುತಿ ."</item>
+        <item>". ಗಾಯತ್ರಿ ಮಂತ್ರ ."</item>
+    </string-array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.13.2" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.string.app_id"
+            file="${:app*projectDir}/build.gradle"/>
+        <location id="R.string.banner_ad_unit_id"
+            file="${:app*projectDir}/build.gradle"/>
+        <location id="R.string.interestial_ad_unit_id"
+            file="${:app*projectDir}/build.gradle"/>
+        <entry
+            name="model"
+            string="string[app_id(D),banner_ad_unit_id(D),interestial_ad_unit_id(D)];;;;"/>
+    </map>
+
+</incidents>

@@ -1,0 +1,44 @@
+<variant
+    name="debug"
+    package="com.karmkand.app"
+    minSdkVersion="24"
+    targetSdkVersion="36.0"
+    debuggable="true"
+    mergedManifest="build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
+    partialResultsDir="build/intermediates/android_test_lint_partial_results/debug/lintAnalyzeDebugAndroidTest/out"
+    desugaredMethodsFiles="/Users/apple/.gradle/caches/8.13/transforms/e4d737eebd043703b6f3f7917745d42c/transformed/D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+  </sourceProviders>
+  <testSourceProviders>
+    <sourceProvider
+        manifests="src/androidTest/AndroidManifest.xml"
+        javaDirectories="src/androidTest/java:src/androidTestDebug/java:src/androidTest/kotlin:src/androidTestDebug/kotlin"
+        resDirectories="src/androidTest/res:src/androidTestDebug/res"
+        assetsDirectories="src/androidTest/assets:src/androidTestDebug/assets"
+        androidTest="true"/>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <resValues>
+    <resValue
+        type="string"
+        name="app_id"
+        value="ca-app-pub-3940256099942544~3347511713" />
+    <resValue
+        type="string"
+        name="banner_ad_unit_id"
+        value="ca-app-pub-3940256099942544/6300978111" />
+    <resValue
+        type="string"
+        name="interestial_ad_unit_id"
+        value="ca-app-pub-3940256099942544/1033173712" />
+  </resValues>
+  <artifact
+      type="INSTRUMENTATION_TEST"
+      applicationId="com.karmkand.app.test"
+      generatedResourceFolders="build/generated/res/resValues/androidTest/debug"
+      desugaredMethodsFiles="/Users/apple/.gradle/caches/8.13/transforms/e4d737eebd043703b6f3f7917745d42c/transformed/D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>

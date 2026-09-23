@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mantra_array_title">
+        <item>". रुद्री पाठ ."</item>
+        <item>". प्रणम्य शिरसा देवं ."</item>
+        <item>". शिव तांडव स्तोत्रम् ."</item>
+        <item>". शिव महिम्न स्तोत्रम् ."</item>
+        <item>". श्री रुद्राष्टकम् ."</item>
+        <item>". लिंगाष्टकम् ."</item>
+        <item>". बिल्वाष्टकम् ."</item>
+        <item>". शिवाष्टकम् ."</item>
+        <item>". शिव पंचाक्षर स्तोत्रम् ."</item>
+        <item>". श्री सरस्वती स्तुति ."</item>
+        <item>". गायत्री मंत्र ."</item>
+    </string-array>
+</resources>

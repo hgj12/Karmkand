@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Karmkand.Splash" parent="Theme.SplashScreen">
+
+        
+        
+        <item name="windowSplashScreenBackground">@color/primary</item>
+
+        
+        
+        <item name="windowSplashScreenAnimatedIcon">@drawable/bg1</item>
+
+        
+        <item name="windowSplashScreenAnimationDuration">0</item>
+
+        
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+
+    </style>
+</resources>

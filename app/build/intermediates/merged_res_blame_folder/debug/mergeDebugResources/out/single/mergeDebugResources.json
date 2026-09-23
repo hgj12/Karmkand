@@ -1,0 +1,310 @@
+[
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/menu_main.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/menu/main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_graphic.jpg.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/graphic.jpg"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-hdpi_bg.jpg.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-hdpi/bg.jpg"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_nav_header_main.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/nav_header_main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_list_aarti.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/list_aarti.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_activity_privacy_policy.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/activity_privacy_policy.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_bottom_down.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/bottom_down.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slid_in_right.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slid_in_right.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_ic_om.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/ic_om.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-hdpi_ff_share.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-hdpi/ff_share.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_main.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xhdpi_ff_more.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xhdpi/ff_more.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slid_out_left.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slid_out_left.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-hdpi_ff_more.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-hdpi/ff_more.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_splash.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/splash.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxxhdpi_ff_rate.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxxhdpi/ff_rate.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-mdpi_ff_share.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-mdpi/ff_share.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_ic_language.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/ic_language.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxhdpi_ff_share.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxhdpi/ff_share.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/menu_main.xml.flat",
+        "source": "com.karmkand.app-main-46:/menu/main.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_card_devotional_bg.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/card_devotional_bg.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxxhdpi_ff_more.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxxhdpi/ff_more.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/font_sanskrit.ttf.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/font/sanskrit.ttf"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_ic_chevron_right.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/ic_chevron_right.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_list_sub_item.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/list_sub_item.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-hdpi_ff_rate.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-hdpi/ff_rate.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xhdpi_ff_rate.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xhdpi/ff_rate.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slide_out_up.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slide_out_up.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxhdpi_ff_rate.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxhdpi/ff_rate.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slid_in_left.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slid_in_left.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_main_list_activity.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/main_list_activity.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_list_sub_item.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/list_sub_item.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_side_nav_bar.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/side_nav_bar.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/xml_locales_config.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/xml/locales_config.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-nodpi_ic_launcher_mark.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-nodpi/ic_launcher_mark.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxhdpi_bg.jpg.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxhdpi/bg.jpg"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_list_item.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxxhdpi_ff_share.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxxhdpi/ff_share.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_btn_bg.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/btn_bg.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_logo.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_bottom_up.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/bottom_up.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_activity_main.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slid_out_right.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slid_out_right.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-mdpi_bg.jpg.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-mdpi/bg.jpg"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_list_aarti.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/list_aarti.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_bg1.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/bg1.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_app_bar_main.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/app_bar_main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-mdpi_ff_rate.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-mdpi/ff_rate.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_nav_header_main.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/nav_header_main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xxhdpi_ff_more.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xxhdpi/ff_more.png"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_btn_bg.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/btn_bg.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/xml_backup_rules.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-mdpi_ff_more.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-mdpi/ff_more.png"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_main_list_activity.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/main_list_activity.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_list_item.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/list_item.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/anim_slide_in_up.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/anim/slide_in_up.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xhdpi_bg.jpg.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xhdpi/bg.jpg"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/layout_main.xml.flat",
+        "source": "com.karmkand.app-main-46:/layout/main.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable_ic_splash.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable/ic_splash.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/drawable-xhdpi_ff_share.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/drawable-xhdpi/ff_share.png"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_ic_ad_privacy.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/ic_ad_privacy.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/layout_activity_privacy_policy.xml.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/layout/activity_privacy_policy.xml"
+    },
+    {
+        "merged": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/.gradle/daemon/8.13/com.karmkand.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.karmkand.app-debug-44:/drawable_ic_policy.xml.flat",
+        "source": "com.karmkand.app-main-46:/drawable/ic_policy.xml"
+    }
+]
