@@ -80,9 +80,21 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
 		}
 	}
 
+	private float textSizeSp = 17f;
+
+	public void setTextSize(float sizeSp) {
+		this.textSizeSp = sizeSp;
+		notifyDataSetChanged();
+	}
+
+	public float getTextSize() {
+		return textSizeSp;
+	}
+
 	// Replace the contents of a view (invoked by the layout manager)
 	@Override
 	public void onBindViewHolder(@NonNull final DetailAdapter.ViewHolder holder, int position) {
+		holder.tvDetail.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, textSizeSp);
 		String raw = slokdetail.get(position);
 		String display = LocaleStringHelper.resolveDisplayText(
 				context,

@@ -2,16 +2,16 @@
 <resources>
 
     <string-array name="mantra_array_title">
-        <item>". റുദ്രി പാഠം ."</item>
-        <item>". പ്രണമ്യ ശിരസാ ദേവം ."</item>
-        <item>". ശിവ താണ്ഡവ സ്തോത്രം ."</item>
-        <item>". ശിവ മഹിമ്ന സ്തോത്രം ."</item>
-        <item>". ശ്രീ രുദ്രാഷ്ടകം ."</item>
-        <item>". ലിംഗാഷ്ടകം ."</item>
-        <item>". ബിൽവാഷ്ടകം ."</item>
-        <item>". ശിവാഷ്ടകം ."</item>
-        <item>". ശിവ പഞ്ചാക്ഷര സ്തോത്രം ."</item>
-        <item>". ശ്രീ സരസ്വതി സ്തുതി ."</item>
-        <item>". ഗായത്രി മന്ത്രം ."</item>
+        <item>റുദ്രി പാഠം</item>
+        <item>പ്രണമ്യ ശിരസാ ദേവം</item>
+        <item>ശിവ താണ്ഡവ സ്തോത്രം</item>
+        <item>ശിവ മഹിമ്ന സ്തോത്രം</item>
+        <item>ശ്രീ രുദ്രാഷ്ടകം</item>
+        <item>ലിംഗാഷ്ടകം</item>
+        <item>ബിൽവാഷ്ടകം</item>
+        <item>ശിവാഷ്ടകം</item>
+        <item>ശിവ പഞ്ചാക്ഷര സ്തോത്രം</item>
+        <item>ശ്രീ സരസ്വതി സ്തുതി</item>
+        <item>ഗായത്രി മന്ത്രം</item>
     </string-array>
 </resources>

@@ -4,92 +4,199 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_spiritual_gradient">
 
+    <!-- Elevated Liquid Glass Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@drawable/glass_action_bar_bg"
         android:theme="@style/myToolbarTheme"
         app:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtHeader"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:ellipsize="end"
-            android:fontFamily="@font/sanskrit"
-            android:maxLines="1"
-            android:text="@string/category_avahan"
-            android:textColor="@color/white"
-            android:textSize="@dimen/title_medium" />
+            android:layout_height="match_parent"
+            android:paddingEnd="@dimen/spacing_sm">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btnListSearchToggle"
+                android:ellipsize="end"
+                android:fontFamily="@font/sanskrit"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnListSearchToggle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/search_title"
+                android:padding="10dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/gold_light" />
+
+        </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Expandable Search / Filter Bar -->
+    <LinearLayout
+        android:id="@+id/llListSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_xs"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/glass_search_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spacing_md"
+            android:paddingEnd="@dimen/spacing_md">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/gold_accent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edtListSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_tertiary"
+                android:textSize="13sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnClearListSearch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@null"
+                android:padding="6dp"
+                android:src="@drawable/ic_clear"
+                android:visibility="gone"
+                app:tint="@color/text_tertiary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Main Content Recycler -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingTop="@dimen/spacing_xs"
-        android:paddingBottom="@dimen/spacing_sm"
+        android:paddingBottom="72dp"
         app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/llListSearchBar"
         tools:listitem="@layout/list_item" />
 
+    <!-- Floating Devotional Action Bar (Visible on Reading Screens) -->
+    <include
+        android:id="@+id/includedDevotionalBar"
+        layout="@layout/layout_devotional_action_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <!-- Localized Empty State Container -->
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/llEmptyState"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/spacing_xl"
         android:layout_marginEnd="@dimen/spacing_xl"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="@dimen/spacing_lg"
         android:visibility="gone"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/empty_state_icon_size"
-            android:layout_height="@dimen/empty_state_icon_size"
-            android:layout_marginBottom="@dimen/spacing_md"
-            android:contentDescription="@string/empty_state_title"
-            android:src="@drawable/ic_om" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtEmptyTitle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/spacing_sm"
-            android:fontFamily="@font/sanskrit"
+            android:background="@drawable/glass_card_elevated_bg"
             android:gravity="center"
-            android:text="@string/empty_state_title"
-            android:textColor="@color/white"
-            android:textSize="@dimen/title_medium"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_xl">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtEmptyDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/empty_state_desc"
-            android:textColor="@color/text_secondary"
-            android:textSize="@dimen/title_verysmall" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="@dimen/spacing_md"
+                android:contentDescription="@string/empty_state_title"
+                android:src="@drawable/ic_om"
+                app:tint="@color/gold_accent" />
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEmptyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:fontFamily="@font/sanskrit"
+                android:gravity="center"
+                android:text="@string/empty_state_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_medium"
+                android:textStyle="bold" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtEmptyDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/empty_state_desc"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/title_verysmall" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Docked AdView -->
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"

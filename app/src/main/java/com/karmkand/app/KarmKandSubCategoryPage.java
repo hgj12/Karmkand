@@ -160,7 +160,8 @@ public class KarmKandSubCategoryPage extends AppCompatActivity implements Catego
                                         // Make sure to set your reference to null so you don't
                                         // show it a second time.
                                         mInterstitialAd = null;
-
+                                        loadInterestial();
+                                        nextPage();
                                     }
 
                                     @Override

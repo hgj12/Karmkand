@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/glass_counter_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_xl">
+
+    <!-- Dialog Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtJapaTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/sanskrit"
+            android:text="@string/japa_title"
+            android:textColor="@color/gold_light"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnJapaClose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@null"
+            android:padding="8dp"
+            android:src="@drawable/ic_clear"
+            app:tint="@color/text_tertiary" />
+
+    </RelativeLayout>
+
+    <!-- Subtitle / Target -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtJapaTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:background="@drawable/glass_pill_selected"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingTop="3dp"
+        android:paddingEnd="@dimen/spacing_md"
+        android:paddingBottom="3dp"
+        android:text="लक्ष्य: १०८ मणके"
+        android:textColor="@color/gold_light"
+        android:textSize="12sp" />
+
+    <!-- Big Circular Touch Area -->
+    <FrameLayout
+        android:id="@+id/btnJapaTap"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:layout_marginBottom="@dimen/spacing_lg"
+        android:background="@drawable/glass_circle_button"
+        android:clickable="true"
+        android:elevation="6dp"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtJapaCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sanskrit"
+                android:text="0"
+                android:textColor="@color/gold_light"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="स्पर्श करें"
+                android:textColor="@color/text_tertiary"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Progress Text -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtJapaProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="१०८ में से ० जप"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!-- Rounds Completed -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtJapaRounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="माला चक्र: ०"
+        android:textColor="@color/gold_accent"
+        android:textSize="13sp" />
+
+    <!-- Reset Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnJapaReset"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:background="@drawable/glass_pill_unselected"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        android:text="@string/japa_reset"
+        android:textAllCaps="false"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp" />
+
+</LinearLayout>

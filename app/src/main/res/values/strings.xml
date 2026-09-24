@@ -36,6 +36,47 @@
     <string name="category_rajopachar_puja">राजोपचार पूजा</string>
     <string name="category_sandhya_vidhi">संध्या विधि</string>
 
+    <!-- Modern 2026 UI Strings -->
+    <string name="greeting_morning">प्रातः काल वंदन</string>
+    <string name="greeting_afternoon">शुभ मध्याह्न</string>
+    <string name="greeting_evening">शुभ संध्या</string>
+    <string name="greeting_night">शुभ रात्रि</string>
+    <string name="app_subtitle">वैदिक मन्त्र एवं पूजा संग्रह</string>
+    <string name="search_hint">मन्त्र, आरती या विधि खोजें...</string>
+    <string name="search_title">खोज परिणाम</string>
+    <string name="search_no_results">कोई परिणाम नहीं मिला</string>
+    <string name="search_query_prompt">खोजने के लिए शब्द लिखें...</string>
+    <string name="daily_mantra_title">दैनिक मन्त्र</string>
+    <string name="daily_mantra_tag">॥ गायत्री मन्त्र ॥</string>
+    <string name="daily_mantra_text">ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात् ॥</string>
+    <string name="daily_mantra_meaning">उस प्राणस्वरूप, दुःखनाशक, सुखस्वरूप, श्रेष्ठ परमात्मा का हम ध्यान करें, वह हमारी बुद्धि को सन्मार्ग में प्रेरित करे।</string>
+    <string name="action_japa_counter">जप माला</string>
+    <string name="action_read">पढ़ें</string>
+    <string name="action_font_size">अक्षर आकार</string>
+    <string name="action_favorite">संग्रह</string>
+    <string name="action_copy">कॉपी</string>
+    <string name="action_share">साझा करें</string>
+    <string name="nav_home">मुख्य</string>
+    <string name="nav_mantra">मन्त्र</string>
+    <string name="nav_aarti">आरती</string>
+    <string name="nav_saved">संग्रह</string>
+    <string name="japa_title">॥ श्री जप माला ॥</string>
+    <string name="japa_count_format">%1$d / %2$d</string>
+    <string name="japa_rounds">माला चक्र: %1$d</string>
+    <string name="japa_reset">पुनः प्रारम्भ</string>
+    <string name="japa_completed_msg">॥ ॐ नमः शिवाय ॥\nमाला पूर्ण हुई! १०८ जप सम्पन्न!</string>
+    <string name="copied_toast">मन्त्र क्लिपबोर्ड पर कॉपी किया गया</string>
+    <string name="saved_toast">संग्रह में जोड़ा गया</string>
+    <string name="removed_toast">संग्रह से हटाया गया</string>
+    <string name="category_desc_sandhya">१० नित्य विधि</string>
+    <string name="category_desc_mantra">५२ वैदिक मन्त्र</string>
+    <string name="category_desc_hom">हवन एवं आहुति</string>
+    <string name="category_desc_aarti">२६ आरतियाँ</string>
+    <string name="category_desc_avahan">देव आवाहन</string>
+    <string name="category_desc_rajopchar">षोडशोपचार पूजा</string>
+    <string name="tab_favorites_empty_title">कोई संग्रह नहीं मिला</string>
+    <string name="tab_favorites_empty_desc">किसी भी मन्त्र या आरती पर दिल के चिह्न (♥) को दबाकर यहाँ सुरक्षित करें।</string>
+
     <string name="market_link" translatable="false">"market://search?q=pub:Matangi+Developer"</string>
     <string name="market_link_2" translatable="false">"https://play.google.com/store/apps/developer?id=Matangi+Developer"</string>
     <!---->

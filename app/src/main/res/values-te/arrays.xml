@@ -2,16 +2,16 @@
 <resources>
 
     <string-array name="mantra_array_title">
-        <item>". రుద్రీ పాఠం ."</item>
-        <item>". ప్రణమ్య శిరసా దేవం ."</item>
-        <item>". శివ తాండవ స్తోత్రమ్ ."</item>
-        <item>". శివ మహిమ్న స్తోత్రమ్ ."</item>
-        <item>". శ్రీ రుద్రాష్టకమ్ ."</item>
-        <item>". లింగాష్టకమ్ ."</item>
-        <item>". బిల్వాష్టకమ్ ."</item>
-        <item>". శివాష్టకమ్ ."</item>
-        <item>". శివ పంచాక్షర స్తోత్రమ్ ."</item>
-        <item>". శ్రీ సరస్వతీ స్తుతి ."</item>
-        <item>". గాయత్రీ మంత్రం ."</item>
+        <item>రుద్రీ పాఠం</item>
+        <item>ప్రణమ్య శిరసా దేవం</item>
+        <item>శివ తాండవ స్తోత్రమ్</item>
+        <item>శివ మహిమ్న స్తోత్రమ్</item>
+        <item>శ్రీ రుద్రాష్టకమ్</item>
+        <item>లింగాష్టకమ్</item>
+        <item>బిల్వాష్టకమ్</item>
+        <item>శివాష్టకమ్</item>
+        <item>శివ పంచాక్షర స్తోత్రమ్</item>
+        <item>శ్రీ సరస్వతీ స్తుతి</item>
+        <item>గాయత్రీ మంత్రం</item>
     </string-array>
 </resources>

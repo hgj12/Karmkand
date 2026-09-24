@@ -3,16 +3,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:background="@drawable/bg_spiritual_gradient">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/padding_xxlarge"
-       android:src="@drawable/logo"
+    <!-- Center Spiritual Emblem -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <!-- Glowing Aura Icon -->
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/glass_circle_button"
+            android:elevation="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_om"
+                app:tint="@color/gold_light" />
+
+        </FrameLayout>
+
+        <!-- Sacred App Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSplashTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xl"
+            android:fontFamily="@font/sanskrit"
+            android:text="@string/header"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <!-- Sacred Motto Tagline -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSplashTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:fontFamily="@font/sanskrit"
+            android:text="@string/nav_header_subtitle"
+            android:textColor="@color/gold_light"
+            android:textSize="17sp" />
+
+        <!-- Subtitle -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/app_subtitle"
+            android:textColor="@color/text_tertiary"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+    <!-- Bottom Sacred Diya Accent -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="36dp"
+        android:src="@drawable/ic_diya"
+        app:tint="@color/gold_accent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

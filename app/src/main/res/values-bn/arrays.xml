@@ -2,16 +2,16 @@
 <resources>
 
     <string-array name="mantra_array_title">
-        <item>". রুদ্রী পাঠ ."</item>
-        <item>". প্রণাম্য শিরসা দেবম্ ."</item>
-        <item>". শিব তাণ্ডব স্তোত্রম্ ."</item>
-        <item>". শিব মহিম্ন স্তোত্রম্ ."</item>
-        <item>". শ্রী রুদ্রাষ্টকম্ ."</item>
-        <item>". লিঙ্গাষ্টকম্ ."</item>
-        <item>". বিল্বাষ্টকম্ ."</item>
-        <item>". শিবাষ্টকম্ ."</item>
-        <item>". শিব পঞ্চাক্ষর স্তোত্রম্ ."</item>
-        <item>". শ্রী সরস্বতী স্তুতি ."</item>
-        <item>". গায়ত্রী মন্ত্র ."</item>
+        <item>রুদ্রী পাঠ</item>
+        <item>প্রণাম্য শিরসা দেবম্</item>
+        <item>শিব তাণ্ডব স্তোত্রম্</item>
+        <item>শিব মহিম্ন স্তোত্রম্</item>
+        <item>শ্রী রুদ্রাষ্টকম্</item>
+        <item>লিঙ্গাষ্টকম্</item>
+        <item>বিল্বাষ্টকম্</item>
+        <item>শিবাষ্টকম্</item>
+        <item>শিব পঞ্চাক্ষর স্তোত্রম্</item>
+        <item>শ্রী সরস্বতী স্তুতি</item>
+        <item>গায়ত্রী মন্ত্র</item>
     </string-array>
 </resources>

@@ -12,17 +12,23 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
@@ -37,26 +43,46 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.UserMessagingPlatform;
+import com.karmkand.app.Utils.FavoritesManager;
+import com.karmkand.app.Utils.JapaCounterDialog;
+import com.karmkand.app.Utils.LanguagePickerDialog;
 import com.karmkand.app.Utils.LocaleManager;
 import com.karmkand.app.Utils.LocaleStringHelper;
+import com.karmkand.app.Utils.SqlLiteDbHelper;
 import com.karmkand.app.Utils.Utility;
+import com.karmkand.app.adapter.FavoritesAdapter;
+import com.karmkand.app.adapter.SearchResultAdapter;
+import com.karmkand.app.initialize.AartiData;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-
 public class KarmKandMenu extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
-
-    private static final String PREF_POSITION = "position";
 
     private final AtomicBoolean isMobileAdsInitializeCalled = new AtomicBoolean(false);
     private AppCompatTextView tvAvahan, tvHome, tvMantra, tvRajopacharPuja, tvAarti, tvSandhya;
-    private AppCompatTextView txtMenuHeader;
+    private View cardSandhya, cardMantra, cardHome, cardAarti, cardAvahan, cardRajopacharPuja;
+    private AppCompatTextView txtMenuHeader, txtGreeting, txtGreetingSubtitle;
+    private AppCompatImageView ivGreetingIcon;
+    private EditText edtSearchHome;
+    private View btnClearSearch;
+    private View llHomeMain, llSearchResults, llFavorites, llSearchEmpty, llFavoritesEmpty;
+    private RecyclerView rvSearchResults, rvFavorites;
+    private SearchResultAdapter searchResultAdapter;
+    private FavoritesAdapter favoritesAdapter;
+
+    private View tabHome, tabMantras, tabAartis, tabSaved;
+    private AppCompatImageView ivTabHome, ivTabMantras, ivTabAartis, ivTabSaved;
+    private AppCompatTextView tvTabHome, tvTabMantras, tvTabAartis, tvTabSaved;
+
     private InterstitialAd mInterstitialAd;
     private AdView mAdView;
     private DrawerLayout drawerLayout;
     private Utility utility;
+    private SqlLiteDbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,16 +96,78 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
     }
 
     public void initViews() {
-
         overridePendingTransition(R.anim.slid_in_right, R.anim.slid_out_left);
 
         utility = Utility.getInstance();
+        dbHelper = new SqlLiteDbHelper(this);
+        try {
+            dbHelper.CopyDataBaseFromAsset();
+        } catch (IOException e) {
+            utility.showLog(e);
+        }
+        dbHelper.openDataBase();
+
+        // Category click targets
         tvAvahan = findViewById(R.id.tvAvahan);
         tvHome = findViewById(R.id.tvHome);
         tvAarti = findViewById(R.id.tvAarti);
         tvMantra = findViewById(R.id.tvMantra);
         tvSandhya = findViewById(R.id.tvSandhya);
         tvRajopacharPuja = findViewById(R.id.tvRajopacharPuja);
+
+        cardSandhya = findViewById(R.id.cardSandhya);
+        cardMantra = findViewById(R.id.cardMantra);
+        cardHome = findViewById(R.id.cardHome);
+        cardAarti = findViewById(R.id.cardAarti);
+        cardAvahan = findViewById(R.id.cardAvahan);
+        cardRajopacharPuja = findViewById(R.id.cardRajopacharPuja);
+
+        // Dynamic greeting
+        txtGreeting = findViewById(R.id.txtGreeting);
+        txtGreetingSubtitle = findViewById(R.id.txtGreetingSubtitle);
+        ivGreetingIcon = findViewById(R.id.ivGreetingIcon);
+        updateGreeting();
+
+        // Search views
+        edtSearchHome = findViewById(R.id.edtSearchHome);
+        btnClearSearch = findViewById(R.id.btnClearSearch);
+        llHomeMain = findViewById(R.id.llHomeMain);
+        llSearchResults = findViewById(R.id.llSearchResults);
+        llFavorites = findViewById(R.id.llFavorites);
+        llSearchEmpty = findViewById(R.id.llSearchEmpty);
+        llFavoritesEmpty = findViewById(R.id.llFavoritesEmpty);
+
+        rvSearchResults = findViewById(R.id.rvSearchResults);
+        rvFavorites = findViewById(R.id.rvFavorites);
+
+        setupSearchAndFavorites();
+
+        // Bottom Navigation Tabs
+        tabHome = findViewById(R.id.tabHome);
+        tabMantras = findViewById(R.id.tabMantras);
+        tabAartis = findViewById(R.id.tabAartis);
+        tabSaved = findViewById(R.id.tabSaved);
+
+        ivTabHome = findViewById(R.id.ivTabHome);
+        ivTabMantras = findViewById(R.id.ivTabMantras);
+        ivTabAartis = findViewById(R.id.ivTabAartis);
+        ivTabSaved = findViewById(R.id.ivTabSaved);
+
+        tvTabHome = findViewById(R.id.tvTabHome);
+        tvTabMantras = findViewById(R.id.tvTabMantras);
+        tvTabAartis = findViewById(R.id.tvTabAartis);
+        tvTabSaved = findViewById(R.id.tvTabSaved);
+
+        // Daily Mantra Hero actions
+        View btnHeroJapa = findViewById(R.id.btnHeroJapa);
+        if (btnHeroJapa != null) {
+            btnHeroJapa.setOnClickListener(v -> new JapaCounterDialog(this, "॥ गायत्री मन्त्र ॥").show());
+        }
+        View btnHeroRead = findViewById(R.id.btnHeroRead);
+        if (btnHeroRead != null) {
+            btnHeroRead.setOnClickListener(v -> openCategory(MANTRA.ordinal()));
+        }
+
         mAdView = findViewById(R.id.adView);
         if (mAdView != null) {
             mAdView.setVisibility(View.GONE);
@@ -88,6 +176,178 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
         bindLocalizedLabels();
         setupToolbar();
         setupDrawer();
+        setupBottomNav();
+    }
+
+    private void updateGreeting() {
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        if (txtGreeting != null && ivGreetingIcon != null) {
+            if (hour >= 4 && hour < 12) {
+                txtGreeting.setText(LocaleStringHelper.getString(this, R.string.greeting_morning));
+                ivGreetingIcon.setImageResource(R.drawable.ic_sun);
+            } else if (hour >= 12 && hour < 17) {
+                txtGreeting.setText(LocaleStringHelper.getString(this, R.string.greeting_afternoon));
+                ivGreetingIcon.setImageResource(R.drawable.ic_sun);
+            } else if (hour >= 17 && hour < 21) {
+                txtGreeting.setText(LocaleStringHelper.getString(this, R.string.greeting_evening));
+                ivGreetingIcon.setImageResource(R.drawable.ic_moon);
+            } else {
+                txtGreeting.setText(LocaleStringHelper.getString(this, R.string.greeting_night));
+                ivGreetingIcon.setImageResource(R.drawable.ic_moon);
+            }
+        }
+    }
+
+    private void setupSearchAndFavorites() {
+        if (rvSearchResults != null) {
+            rvSearchResults.setLayoutManager(new LinearLayoutManager(this));
+            searchResultAdapter = new SearchResultAdapter(this, result -> {
+                if (result.categoryIndex == AARTI.ordinal() && result.data instanceof AartiData) {
+                    Intent intent = new Intent(this, KarmKandMantraList.class);
+                    intent.putExtra("aartiData", (AartiData) result.data);
+                    intent.putExtra("position", 0);
+                    intent.putExtra("category", AARTI.ordinal());
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(this, KarmKandMantraList.class);
+                    intent.putExtra("headername", String.valueOf(result.data));
+                    intent.putExtra("position", 0);
+                    intent.putExtra("category", result.categoryIndex);
+                    startActivity(intent);
+                }
+            });
+            rvSearchResults.setAdapter(searchResultAdapter);
+        }
+
+        if (rvFavorites != null) {
+            rvFavorites.setLayoutManager(new LinearLayoutManager(this));
+            favoritesAdapter = new FavoritesAdapter(this, item -> {
+                if (item.aartiId >= 0) {
+                    AartiData aartiData = dbHelper.getAartiById(item.aartiId, LocaleManager.getSavedLanguage(this));
+                    if (aartiData != null) {
+                        Intent intent = new Intent(this, KarmKandMantraList.class);
+                        intent.putExtra("aartiData", aartiData);
+                        intent.putExtra("position", 0);
+                        intent.putExtra("category", AARTI.ordinal());
+                        startActivity(intent);
+                        return;
+                    }
+                }
+                Intent intent = new Intent(this, KarmKandMantraList.class);
+                intent.putExtra("headername", item.headerName != null && !item.headerName.isEmpty() ? item.headerName : item.title);
+                intent.putExtra("position", 0);
+                intent.putExtra("category", item.categoryIndex);
+                startActivity(intent);
+            });
+            rvFavorites.setAdapter(favoritesAdapter);
+        }
+
+        if (edtSearchHome != null) {
+            edtSearchHome.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    String query = s.toString().trim();
+                    if (!query.isEmpty()) {
+                        if (btnClearSearch != null) btnClearSearch.setVisibility(View.VISIBLE);
+                        performSearch(query);
+                    } else {
+                        if (btnClearSearch != null) btnClearSearch.setVisibility(View.GONE);
+                        showHomeView();
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {}
+            });
+        }
+
+        if (btnClearSearch != null) {
+            btnClearSearch.setOnClickListener(v -> {
+                if (edtSearchHome != null) {
+                    edtSearchHome.setText("");
+                }
+                showHomeView();
+            });
+        }
+
+        View btnCloseSearchResults = findViewById(R.id.btnCloseSearchResults);
+        if (btnCloseSearchResults != null) {
+            btnCloseSearchResults.setOnClickListener(v -> {
+                if (edtSearchHome != null) {
+                    edtSearchHome.setText("");
+                }
+                showHomeView();
+            });
+        }
+    }
+
+    private void performSearch(String query) {
+        if (llHomeMain != null) llHomeMain.setVisibility(View.GONE);
+        if (llFavorites != null) llFavorites.setVisibility(View.GONE);
+        if (llSearchResults != null) llSearchResults.setVisibility(View.VISIBLE);
+
+        String lang = LocaleManager.getSavedLanguage(this);
+        List<SqlLiteDbHelper.SearchResult> results = dbHelper.searchContent(query, lang);
+
+        if (results != null && !results.isEmpty()) {
+            if (llSearchEmpty != null) llSearchEmpty.setVisibility(View.GONE);
+            if (rvSearchResults != null) rvSearchResults.setVisibility(View.VISIBLE);
+            searchResultAdapter.updateData(results);
+        } else {
+            if (llSearchEmpty != null) llSearchEmpty.setVisibility(View.VISIBLE);
+            if (rvSearchResults != null) rvSearchResults.setVisibility(View.GONE);
+        }
+    }
+
+    private void showHomeView() {
+        if (llHomeMain != null) llHomeMain.setVisibility(View.VISIBLE);
+        if (llSearchResults != null) llSearchResults.setVisibility(View.GONE);
+        if (llFavorites != null) llFavorites.setVisibility(View.GONE);
+        highlightBottomTab(0);
+    }
+
+    private void showFavoritesView() {
+        if (llHomeMain != null) llHomeMain.setVisibility(View.GONE);
+        if (llSearchResults != null) llSearchResults.setVisibility(View.GONE);
+        if (llFavorites != null) llFavorites.setVisibility(View.VISIBLE);
+        highlightBottomTab(3);
+
+        List<FavoritesManager.FavoriteItem> list = FavoritesManager.getFavorites(this);
+        if (list != null && !list.isEmpty()) {
+            if (llFavoritesEmpty != null) llFavoritesEmpty.setVisibility(View.GONE);
+            if (rvFavorites != null) rvFavorites.setVisibility(View.VISIBLE);
+            favoritesAdapter.updateData(list);
+        } else {
+            if (llFavoritesEmpty != null) llFavoritesEmpty.setVisibility(View.VISIBLE);
+            if (rvFavorites != null) rvFavorites.setVisibility(View.GONE);
+        }
+    }
+
+    private void setupBottomNav() {
+        if (tabHome != null) tabHome.setOnClickListener(v -> showHomeView());
+        if (tabMantras != null) tabMantras.setOnClickListener(v -> handleCategorySelection(MANTRA.ordinal()));
+        if (tabAartis != null) tabAartis.setOnClickListener(v -> handleCategorySelection(AARTI.ordinal()));
+        if (tabSaved != null) tabSaved.setOnClickListener(v -> showFavoritesView());
+    }
+
+    private void highlightBottomTab(int index) {
+        int colorSelected = getResources().getColor(R.color.gold_light);
+        int colorUnselected = getResources().getColor(R.color.text_tertiary);
+
+        if (ivTabHome != null) ivTabHome.setColorFilter(index == 0 ? colorSelected : colorUnselected);
+        if (tvTabHome != null) tvTabHome.setTextColor(index == 0 ? colorSelected : colorUnselected);
+
+        if (ivTabMantras != null) ivTabMantras.setColorFilter(index == 1 ? colorSelected : colorUnselected);
+        if (tvTabMantras != null) tvTabMantras.setTextColor(index == 1 ? colorSelected : colorUnselected);
+
+        if (ivTabAartis != null) ivTabAartis.setColorFilter(index == 2 ? colorSelected : colorUnselected);
+        if (tvTabAartis != null) tvTabAartis.setTextColor(index == 2 ? colorSelected : colorUnselected);
+
+        if (ivTabSaved != null) ivTabSaved.setColorFilter(index == 3 ? colorSelected : colorUnselected);
+        if (tvTabSaved != null) tvTabSaved.setTextColor(index == 3 ? colorSelected : colorUnselected);
     }
 
     private void bindLocalizedLabels() {
@@ -108,8 +368,21 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
 
         txtMenuHeader = findViewById(R.id.txtMenuHeader);
         View btnChangeLanguage = findViewById(R.id.btnChangeLanguage);
+        View btnQuickSearch = findViewById(R.id.btnQuickSearch);
+
         bindToolbarHeader();
-        btnChangeLanguage.setOnClickListener(v -> showLanguagePicker());
+
+        if (btnChangeLanguage != null) {
+            btnChangeLanguage.setOnClickListener(v -> showLanguagePicker());
+        }
+        if (btnQuickSearch != null) {
+            btnQuickSearch.setOnClickListener(v -> {
+                if (edtSearchHome != null) {
+                    edtSearchHome.requestFocus();
+                    utility.showLog(new Exception("Quick search focus"));
+                }
+            });
+        }
     }
 
     private void bindToolbarHeader() {
@@ -129,6 +402,11 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
             public void handleOnBackPressed() {
                 if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START);
+                } else if (llSearchResults != null && llSearchResults.getVisibility() == View.VISIBLE) {
+                    if (edtSearchHome != null) edtSearchHome.setText("");
+                    showHomeView();
+                } else if (llFavorites != null && llFavorites.getVisibility() == View.VISIBLE) {
+                    showHomeView();
                 } else {
                     setEnabled(false);
                     getOnBackPressedDispatcher().onBackPressed();
@@ -145,10 +423,14 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
         }
         bindLocalizedLabels();
         bindToolbarHeader();
+        updateGreeting();
         NavigationView navigationView = findViewById(R.id.nav_view);
         if (navigationView != null) {
             bindDrawerTitles(navigationView);
             updatePrivacyOptionsVisibility(navigationView);
+        }
+        if (llFavorites != null && llFavorites.getVisibility() == View.VISIBLE) {
+            showFavoritesView();
         }
     }
 
@@ -165,11 +447,13 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
         if (mAdView != null) {
             mAdView.destroy();
         }
+        if (dbHelper != null) {
+            dbHelper.close();
+        }
         super.onDestroy();
     }
 
     private void setupDrawer() {
-
         drawerLayout = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -310,6 +594,7 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
                                     public void onAdFailedToShowFullScreenContent(AdError adError) {
                                         mInterstitialAd = null;
                                         loadInterstitial();
+                                        openCategory(getPrefData());
                                     }
 
                                     @Override
@@ -326,19 +611,23 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupListeners() {
+        if (tvAvahan != null) tvAvahan.setOnClickListener(this);
+        if (tvHome != null) tvHome.setOnClickListener(this);
+        if (tvMantra != null) tvMantra.setOnClickListener(this);
+        if (tvRajopacharPuja != null) tvRajopacharPuja.setOnClickListener(this);
+        if (tvAarti != null) tvAarti.setOnClickListener(this);
+        if (tvSandhya != null) tvSandhya.setOnClickListener(this);
 
-        tvAvahan.setOnClickListener(this);
-        tvHome.setOnClickListener(this);
-        tvMantra.setOnClickListener(this);
-        tvRajopacharPuja.setOnClickListener(this);
-        tvAarti.setOnClickListener(this);
-        tvSandhya.setOnClickListener(this);
+        if (cardSandhya != null) cardSandhya.setOnClickListener(v -> handleCategorySelection(SANDHYAVIDHI.ordinal()));
+        if (cardMantra != null) cardMantra.setOnClickListener(v -> handleCategorySelection(MANTRA.ordinal()));
+        if (cardHome != null) cardHome.setOnClickListener(v -> handleCategorySelection(HOME.ordinal()));
+        if (cardAarti != null) cardAarti.setOnClickListener(v -> handleCategorySelection(AARTI.ordinal()));
+        if (cardAvahan != null) cardAvahan.setOnClickListener(v -> handleCategorySelection(AVAHANAM.ordinal()));
+        if (cardRajopacharPuja != null) cardRajopacharPuja.setOnClickListener(v -> handleCategorySelection(RAJOPACHARPUJA.ordinal()));
     }
-
 
     @Override
     public void onClick(View view) {
-
         Utility.MAINCATEGORY selectedCat;
 
         if (view == tvAvahan) {
@@ -355,7 +644,10 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
             selectedCat = SANDHYAVIDHI;
         }
 
-        int categoryIndex = selectedCat.ordinal();
+        handleCategorySelection(selectedCat.ordinal());
+    }
+
+    private void handleCategorySelection(int categoryIndex) {
         setPrefData(categoryIndex);
 
         int counter = utility.getCounterData(this);
@@ -386,7 +678,6 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
         int id = item.getItemId();
 
         if (id == R.id.nav_change_language) {
@@ -415,30 +706,7 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showLanguagePicker() {
-        final String[] codes = LocaleManager.getLanguageCodes();
-        final String[] names = LocaleManager.getLanguageDisplayNames();
-        int selected = LocaleManager.getSelectedIndex(this);
-
-        new AlertDialog.Builder(this)
-                .setTitle(LocaleStringHelper.getString(this, R.string.language_dialog_title))
-                .setSingleChoiceItems(names, selected, (dialog, which) -> {
-                    String chosen = codes[which];
-                    if (!chosen.equals(LocaleManager.getSavedLanguage(this))) {
-                        LocaleManager.saveLanguage(this, chosen);
-                        LocaleManager.applyLanguage(chosen);
-                        restartAppForLocale();
-                    }
-                    dialog.dismiss();
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .show();
-    }
-
-    private void restartAppForLocale() {
-        Intent intent = new Intent(this, KarmKandMenu.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finish();
+        LanguagePickerDialog.show(this);
     }
 
     private void openPlayStore() {
@@ -478,5 +746,4 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
-
 }

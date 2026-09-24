@@ -50,6 +50,9 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 	private AdView mAdView;
 	private SqlLiteDbHelper dbHelper;
 	private Utility utility;
+	private KarmKandCategoryAdapter adapter;
+	private View llSearchBar;
+	private android.widget.EditText edtSearch;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +70,14 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 		getOnBackPressedDispatcher().addCallback(this, new androidx.activity.OnBackPressedCallback(true) {
 			@Override
 			public void handleOnBackPressed() {
-				finish();
-				overridePendingTransition(R.anim.slid_in_left, R.anim.slid_out_right);
+				if (llSearchBar != null && llSearchBar.getVisibility() == View.VISIBLE) {
+					llSearchBar.setVisibility(View.GONE);
+					if (edtSearch != null) edtSearch.setText("");
+					if (adapter != null) adapter.filter("");
+				} else {
+					finish();
+					overridePendingTransition(R.anim.slid_in_left, R.anim.slid_out_right);
+				}
 			}
 		});
 	}
@@ -88,6 +97,51 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 
 		Intent intent = getIntent();
 		category = intent.getIntExtra("category", AVAHANAM.ordinal());
+
+		llSearchBar = findViewById(R.id.llListSearchBar);
+		edtSearch = findViewById(R.id.edtListSearch);
+		View btnSearchToggle = findViewById(R.id.btnListSearchToggle);
+		View btnClearSearch = findViewById(R.id.btnClearListSearch);
+
+		if (btnSearchToggle != null && llSearchBar != null) {
+			btnSearchToggle.setOnClickListener(v -> {
+				if (llSearchBar.getVisibility() == View.VISIBLE) {
+					llSearchBar.setVisibility(View.GONE);
+					if (edtSearch != null) edtSearch.setText("");
+					if (adapter != null) adapter.filter("");
+				} else {
+					llSearchBar.setVisibility(View.VISIBLE);
+					if (edtSearch != null) edtSearch.requestFocus();
+				}
+			});
+		}
+
+		if (edtSearch != null) {
+			edtSearch.addTextChangedListener(new android.text.TextWatcher() {
+				@Override
+				public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+				@Override
+				public void onTextChanged(CharSequence s, int start, int before, int count) {
+					String q = s.toString();
+					if (btnClearSearch != null) {
+						btnClearSearch.setVisibility(q.isEmpty() ? View.GONE : View.VISIBLE);
+					}
+					if (adapter != null) {
+						adapter.filter(q);
+					}
+				}
+
+				@Override
+				public void afterTextChanged(android.text.Editable s) {}
+			});
+		}
+
+		if (btnClearSearch != null) {
+			btnClearSearch.setOnClickListener(v -> {
+				if (edtSearch != null) edtSearch.setText("");
+			});
+		}
 
 		mAdView = findViewById(R.id.adView);
 
@@ -153,7 +207,7 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 			recyclerView.setVisibility(View.VISIBLE);
 			recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-			KarmKandCategoryAdapter adapter = new KarmKandCategoryAdapter(this, slockDetail);
+			adapter = new KarmKandCategoryAdapter(this, slockDetail);
 			adapter.setCategoryClickListener(this);
 			recyclerView.setAdapter(adapter);
 		} else {
@@ -273,7 +327,8 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 										// Make sure to set your reference to null so you don't
 										// show it a second time.
 										mInterstitialAd = null;
-
+										loadInterstitial();
+										nextPage();
 									}
 
 									@Override

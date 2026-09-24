@@ -66,16 +66,27 @@ public class HeadingAdapter extends RecyclerView.Adapter<HeadingAdapter.ViewHold
 		return slokdetail.size();
 	}
 
+	private float textSizeSp = 17f;
+
+	public void setTextSize(float sizeSp) {
+		this.textSizeSp = sizeSp;
+		notifyDataSetChanged();
+	}
+
+	public float getTextSize() {
+		return textSizeSp;
+	}
+
 	// Replace the contents of a view (invoked by the layout manager)
 	@Override
 	public void onBindViewHolder(@NonNull final HeadingAdapter.ViewHolder holder, int position) {
-
+		holder.txtslok.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, textSizeSp);
 		SlokList slokdata = slokdetail.get(position);
 
 		StringBuilder sb = new StringBuilder();
 		try {
 			JSONObject responseObj = new JSONObject(slokdata.getSlok());
-			for (int i = 1; i < 100; i++) {
+			for (int i = 1; ; i++) {
 				String key = String.valueOf(i);
 				if (responseObj.has(key)) {
 					sb.append(responseObj.getString(key)).append("\n");

@@ -2,17 +2,17 @@
 <resources>
 
     <string-array name="mantra_array_title">
-        <item>". રુદ્રી પાઠ ."</item>
-        <item>". પ્રણમ્ય શિરસા દેવમ્ ."</item>
-        <item>". શિવ તાંડવ સ્તોત્રમ્ ."</item>
-        <item>". શિવ મહિમ્ન સ્તોત્રમ્ ."</item>
-        <item>". શ્રી રુદ્રાષ્ટકમ્ ."</item>
-        <item>". લિંગાષ્ટકમ્ ."</item>
-        <item>". બિલ્વાષ્ટકમ્ ."</item>
-        <item>". શિવાષ્ટકમ્ ."</item>
-        <item>". શિવ પંચાક્ષર સ્તોત્રમ્ ."</item>
-        <item>". શ્રી સરસ્વતી સ્તુતિ ."</item>
-        <item>". ગાયત્રી મંત્ર ."</item>
+        <item>રુદ્રી પાઠ</item>
+        <item>પ્રણમ્ય શિરસા દેવમ્</item>
+        <item>શિવ તાંડવ સ્તોત્રમ્</item>
+        <item>શિવ મહિમ્ન સ્તોત્રમ્</item>
+        <item>શ્રી રુદ્રાષ્ટકમ્</item>
+        <item>લિંગાષ્ટકમ્</item>
+        <item>બિલ્વાષ્ટકમ્</item>
+        <item>શિવાષ્ટકમ્</item>
+        <item>શિવ પંચાક્ષર સ્તોત્રમ્</item>
+        <item>શ્રી સરસ્વતી સ્તુતિ</item>
+        <item>ગાયત્રી મંત્ર</item>
     </string-array>
 
     <string-array name="mantra_array">

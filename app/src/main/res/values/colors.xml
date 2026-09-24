@@ -1,34 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#9e0707</color>
-    <color name="ic_launcher_background">#9e0707</color>
-    <color name="primary_dark">#960404</color>
-    <color name="accent">#FF9D0A</color>
+    <!-- Brand Sacred Colors -->
+    <color name="primary">#7B1118</color>
+    <color name="ic_launcher_background">#7B1118</color>
+    <color name="primary_dark">#52090F</color>
+    <color name="accent">#E6A122</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
+    <!-- Legacy Compatibility -->
     <color name="item_bg">#640d0d0d</color>
     <color name="item_border">#96ffffff</color>
+    <color name="primary_container">#42080D</color>
 
-    <!-- Modern Spiritual Design System Tokens -->
-    <color name="primary_container">#520808</color>
-    <color name="gold_accent">#FFB300</color>
-    <color name="gold_light">#FFE082</color>
-    <color name="surface_dark">#D9161010</color>
-    <color name="surface_card">#B31A1212</color>
-    <color name="card_stroke">#33FFD54F</color>
-    <color name="card_stroke_focused">#80FFD54F</color>
+    <!-- Modern Spiritual Liquid Glass Tokens -->
+    <color name="surface_bg">#0D0608</color>
+    <color name="surface_bg_gradient_start">#1F0E13</color>
+    <color name="surface_bg_gradient_end">#0B0406</color>
+    <color name="surface_dark">#160A0E</color>
+    <color name="surface_card">#B3241217</color>
+    <color name="glass_surface">#A6221116</color>
+    <color name="glass_surface_elevated">#CC301720</color>
+    <color name="glass_surface_light">#33FFE3A8</color>
+    <color name="glass_border">#33E6A122</color>
+    <color name="glass_border_focused">#66FFD56B</color>
+
+    <!-- Divine Golden Tints -->
+    <color name="gold_accent">#E6A122</color>
+    <color name="gold_light">#FFD56B</color>
+    <color name="gold_soft">#FFF3D1</color>
+    <color name="card_stroke">#33E6A122</color>
+    <color name="card_stroke_focused">#80FFD56B</color>
+    <color name="divider_gold">#26E6A122</color>
+
+    <!-- Text Hierarchy -->
     <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#E8DFDF</color>
-    <color name="text_tertiary">#B8A8A8</color>
-    <color name="text_gold">#FFD54F</color>
-    <color name="divider_gold">#40FFD54F</color>
-    <color name="ripple_light">#33FFFFFF</color>
-    <color name="ripple_gold">#33FFD54F</color>
+    <color name="text_secondary">#EFE5E0</color>
+    <color name="text_tertiary">#BBA39E</color>
+    <color name="text_gold">#FFD56B</color>
+    <color name="text_muted">#8F7773</color>
 
+    <!-- Interactive & Feedback -->
+    <color name="ripple_light">#26FFFFFF</color>
+    <color name="ripple_gold">#33E6A122</color>
+    <color name="bottom_nav_bg">#F213090C</color>
+    <color name="dialog_bg">#F5180B0F</color>
+
+    <!-- Gradients -->
     <color name="center_color">#ebf7f7f7</color>
     <color name="start_color">#e1ffffff</color>
     <color name="end_color">#e1f4f4f4</color>
+
 </resources>

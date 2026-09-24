@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -40,21 +41,26 @@
 
         <activity
             android:name=".KarmKandMenu"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".KarmKandCategoryPage"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".KarmKandSubCategoryPage"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".KarmKandMantraList"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".PrivacyPolicy"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity

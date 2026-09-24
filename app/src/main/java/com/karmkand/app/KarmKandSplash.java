@@ -41,7 +41,7 @@ public class KarmKandSplash extends AppCompatActivity {
 
         // ✅ FIX 4 — make window background match your splash
         // Prevents any white/blank frame between system splash and your layout
-        getWindow().setBackgroundDrawableResource(R.drawable.bg);
+        getWindow().setBackgroundDrawableResource(R.drawable.bg_spiritual_gradient);
 
         setContentView(R.layout.splash);
 

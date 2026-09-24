@@ -96,8 +96,8 @@ public final class LocaleStringHelper {
         String itemFallback = getString(context, R.string.fallback_list_item);
 
         for (int i = 0; i < length; i++) {
-            String primary = i < localized.length ? localized[i] : null;
-            String fallback = i < fallbackItems.length ? fallbackItems[i] : null;
+            String primary = i < localized.length ? cleanDisplayText(localized[i]) : null;
+            String fallback = i < fallbackItems.length ? cleanDisplayText(fallbackItems[i]) : null;
             resolved[i] = coalesce(primary, fallback, itemFallback);
         }
         return resolved;
@@ -117,12 +117,59 @@ public final class LocaleStringHelper {
     ) {
         String[] items = getStringArray(context, arrayResId);
         if (index >= 0 && index < items.length) {
-            String item = items[index];
+            String item = cleanDisplayText(items[index]);
             if (!isInvalidDisplayText(item)) {
                 return item;
             }
         }
         return getString(context, fallbackResId);
+    }
+
+    /**
+     * Cleans display text by stripping outer quotation marks, leading/trailing decorative delimiters
+     * (such as dots, hyphens, bullets, pipes, or tildes used purely as border framing), legacy header
+     * banners, and normalizing spaces.
+     *
+     * Legitimate devotional sentence terminators (dandas '।', '॥') and Latin sentence periods are preserved.
+     */
+    @Nullable
+    public static String cleanDisplayText(@Nullable String text) {
+        if (text == null) {
+            return null;
+        }
+        String cleaned = text.trim();
+        if (cleaned.isEmpty()) {
+            return "";
+        }
+
+        // 1. Remove surrounding double quotes or single quotes if wrapped
+        if ((cleaned.startsWith("\"") && cleaned.endsWith("\"") && cleaned.length() > 1)
+                || (cleaned.startsWith("'") && cleaned.endsWith("'") && cleaned.length() > 1)) {
+            cleaned = cleaned.substring(1, cleaned.length() - 1).trim();
+        }
+
+        // 2. Remove legacy header banner artifacts (e.g. Aarti1 \n -------)
+        cleaned = cleaned.replaceAll("(?i)^\\s*Aarti\\d*\\s*\\n+[-=\\s]+\\n*", "");
+        cleaned = cleaned.replaceAll("(?i)\\n+\\s*[-=]{3,}\\s*\\n+\\s*Aarti\\d*\\s*\\n+\\s*[-=]{3,}\\s*\\n+", "\n\n");
+        cleaned = cleaned.replaceAll("\\n+\\s*[-=]{3,}\\s*\\([Ee]xtra\\)\\s*[-=]{3,}\\s*\\n+", "\n\n");
+        cleaned = cleaned.replaceAll("\\n+\\s*[-=]{3,}\\s*\\n+", "\n\n");
+        cleaned = cleaned.replaceAll("(?i)Aarti shri Gayatri ji ki", "आरती श्री गायत्री जी की");
+
+        // 3. Strip leading decorative delimiters: dots, dashes, bullets, pipes, tildes, asterisks
+        cleaned = cleaned.replaceAll("^[\\s\\.\\-•*|~]+", "");
+
+        // 4. Strip trailing decorative delimiters
+        cleaned = cleaned.replaceAll("[\\s\\-•*|~]+$", "");
+        cleaned = cleaned.replaceAll("\\.{2,}$", "");
+        cleaned = cleaned.replaceAll("\\s+\\.$", "");
+
+        // If the string contains Indic characters or ends with dot following a non-latin character, strip trailing dot
+        if (cleaned.endsWith(".") && !cleaned.matches(".*[a-zA-Z0-9]\\.$")) {
+            cleaned = cleaned.substring(0, cleaned.length() - 1);
+        }
+
+        cleaned = cleaned.trim();
+        return cleaned;
     }
 
     @NonNull
@@ -131,8 +178,9 @@ public final class LocaleStringHelper {
             @Nullable String candidate,
             @StringRes int fallbackResId
     ) {
-        if (!isInvalidDisplayText(candidate)) {
-            return candidate.trim();
+        String cleaned = cleanDisplayText(candidate);
+        if (!isInvalidDisplayText(cleaned)) {
+            return cleaned;
         }
         return getString(context, fallbackResId);
     }
@@ -157,6 +205,12 @@ public final class LocaleStringHelper {
         if (trimmed.isEmpty()) {
             return true;
         }
+        if ("null".equalsIgnoreCase(trimmed) || "undefined".equalsIgnoreCase(trimmed)) {
+            return true;
+        }
+        if (trimmed.equals("%s") || trimmed.equals("{name}") || trimmed.equals("%1$s") || trimmed.equals("%2$s")) {
+            return true;
+        }
         if (trimmed.startsWith("@string/") || trimmed.startsWith("@array/")) {
             return true;
         }
@@ -175,11 +229,13 @@ public final class LocaleStringHelper {
             @Nullable String fallback,
             @NonNull String lastResort
     ) {
-        if (!isInvalidDisplayText(primary)) {
-            return primary.trim();
+        String cleanedPrimary = cleanDisplayText(primary);
+        if (!isInvalidDisplayText(cleanedPrimary)) {
+            return cleanedPrimary;
         }
-        if (!isInvalidDisplayText(fallback)) {
-            return fallback.trim();
+        String cleanedFallback = cleanDisplayText(fallback);
+        if (!isInvalidDisplayText(cleanedFallback)) {
+            return cleanedFallback;
         }
         return lastResort;
     }

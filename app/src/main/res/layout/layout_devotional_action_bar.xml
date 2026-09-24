@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llDevotionalBar"
+    android:layout_width="wrap_content"
+    android:layout_height="52dp"
+    android:layout_gravity="center_horizontal|bottom"
+    android:layout_marginBottom="@dimen/spacing_md"
+    android:background="@drawable/glass_action_bar_bg"
+    android:elevation="8dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/spacing_sm"
+    android:paddingEnd="@dimen/spacing_sm">
+
+    <!-- Font Size Down -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnFontDown"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Decrease font size"
+        android:padding="11dp"
+        android:src="@drawable/ic_text_size"
+        app:tint="@color/text_secondary" />
+
+    <!-- Font Size Up -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnFontUp"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center"
+        android:text="A+"
+        android:textColor="@color/gold_light"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/divider_gold" />
+
+    <!-- Japa Mala Counter -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnDevotionalJapa"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_japa_counter"
+        android:padding="10dp"
+        android:src="@drawable/ic_counter"
+        app:tint="@color/gold_accent" />
+
+    <!-- Favorite / Bookmark -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnDevotionalFavorite"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_favorite"
+        android:padding="10dp"
+        android:src="@drawable/ic_favorite_border"
+        app:tint="@color/gold_accent" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/divider_gold" />
+
+    <!-- Copy -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnDevotionalCopy"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_copy"
+        android:padding="11dp"
+        android:src="@drawable/ic_copy"
+        app:tint="@color/text_secondary" />
+
+    <!-- Share -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnDevotionalShare"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_share"
+        android:padding="11dp"
+        android:src="@drawable/ic_share"
+        app:tint="@color/text_secondary" />
+
+</LinearLayout>

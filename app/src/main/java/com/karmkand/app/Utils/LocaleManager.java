@@ -24,11 +24,12 @@ public final class LocaleManager {
 
     private static final String[] LANGUAGE_CODES = {
             LANGUAGE_DEFAULT,
-            "bn",
+            "en",
             "gu",
+            "mr",
+            "bn",
             "kn",
             "ml",
-            "mr",
             "ta",
             "te"
     };
@@ -44,21 +45,22 @@ public final class LocaleManager {
     @NonNull
     public static String[] getLanguageDisplayNames() {
         return new String[]{
-                "हिन्दी",
-                "বাংলা",
-                "ગુજરાતી",
-                "ಕನ್ನಡ",
-                "മലയാളം",
-                "मराठी",
-                "தமிழ்",
-                "తెలుగు"
+                "हिन्दी (Hindi)",
+                "English",
+                "ગુજરાતી (Gujarati)",
+                "मराठी (Marathi)",
+                "বাংলা (Bengali)",
+                "ಕನ್ನಡ (Kannada)",
+                "മലയാളം (Malayalam)",
+                "தமிழ் (Tamil)",
+                "తెలుగు (Telugu)"
         };
     }
 
     @NonNull
     public static String getSavedLanguage(@NonNull Context context) {
         String saved = getPrefs(context).getString(PREF_LANGUAGE, LANGUAGE_DEFAULT);
-        if (LANGUAGE_SYSTEM.equals(saved) || TextUtils.isEmpty(saved) || "en".equals(saved)) {
+        if (LANGUAGE_SYSTEM.equals(saved) || TextUtils.isEmpty(saved)) {
             return LANGUAGE_DEFAULT;
         }
         return saved;
@@ -67,7 +69,6 @@ public final class LocaleManager {
     public static void saveLanguage(@NonNull Context context, @NonNull String languageCode) {
         String code = LANGUAGE_SYSTEM.equals(languageCode)
                 || TextUtils.isEmpty(languageCode)
-                || "en".equals(languageCode)
                 ? LANGUAGE_DEFAULT
                 : languageCode;
         getPrefs(context).edit().putString(PREF_LANGUAGE, code).apply();
@@ -79,7 +80,7 @@ public final class LocaleManager {
 
     public static void applyLanguage(@Nullable String languageCode) {
         String code = languageCode;
-        if (TextUtils.isEmpty(code) || LANGUAGE_SYSTEM.equals(code) || "en".equals(code)) {
+        if (TextUtils.isEmpty(code) || LANGUAGE_SYSTEM.equals(code)) {
             code = LANGUAGE_DEFAULT;
         }
         AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(code));
