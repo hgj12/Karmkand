@@ -34,7 +34,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/sanskrit"
                 android:maxLines="1"
-                android:textColor="@color/white"
+                android:textColor="@color/primary"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:contentDescription="@string/search_title"
                 android:padding="10dp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/gold_light" />
+                app:tint="@color/primary" />
 
         </RelativeLayout>
 
@@ -93,8 +93,8 @@
                 android:imeOptions="actionDone"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@color/white"
-                android:textColorHint="@color/text_tertiary"
+                android:textColor="@color/text_primary_on_light"
+                android:textColorHint="@color/text_secondary_on_light"
                 android:textSize="13sp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
@@ -106,7 +106,7 @@
                 android:padding="6dp"
                 android:src="@drawable/ic_clear"
                 android:visibility="gone"
-                app:tint="@color/text_tertiary" />
+                app:tint="@color/text_secondary_on_light" />
 
         </LinearLayout>
 
@@ -157,7 +157,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/glass_card_elevated_bg"
+            android:background="@drawable/card_dainik_mantra_bg"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/spacing_xl">
@@ -168,7 +168,7 @@
                 android:layout_marginBottom="@dimen/spacing_md"
                 android:contentDescription="@string/empty_state_title"
                 android:src="@drawable/ic_om"
-                app:tint="@color/gold_accent" />
+                app:tint="@color/primary" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtEmptyTitle"
@@ -178,7 +178,7 @@
                 android:fontFamily="@font/sanskrit"
                 android:gravity="center"
                 android:text="@string/empty_state_title"
-                android:textColor="@color/white"
+                android:textColor="@color/primary"
                 android:textSize="@dimen/title_medium"
                 android:textStyle="bold" />
 
@@ -189,7 +189,7 @@
                 android:gravity="center"
                 android:lineSpacingMultiplier="1.2"
                 android:text="@string/empty_state_desc"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/text_secondary_on_light"
                 android:textSize="@dimen/title_verysmall" />
 
         </LinearLayout>

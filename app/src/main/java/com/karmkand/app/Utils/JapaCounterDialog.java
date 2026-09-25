@@ -65,22 +65,36 @@ public class JapaCounterDialog {
                 Toast.makeText(context, LocaleStringHelper.getString(context, R.string.japa_completed_msg), Toast.LENGTH_SHORT).show();
             }
 
-            txtJapaCount.setText(String.valueOf(currentCount));
-            txtJapaProgress.setText(String.format("१०८ में से %d जप", currentCount));
-            txtJapaRounds.setText(String.format("माला चक्र: %d", roundsCompleted));
+            txtJapaCount.setText(toDevanagari(currentCount));
+            txtJapaProgress.setText(String.format("१०८ में से %s जप", toDevanagari(currentCount)));
+            txtJapaRounds.setText(String.format("माला चक्र: %s", toDevanagari(roundsCompleted)));
         });
 
         btnJapaReset.setOnClickListener(v -> {
             currentCount = 0;
             roundsCompleted = 0;
-            txtJapaCount.setText("0");
+            txtJapaCount.setText("०");
             txtJapaProgress.setText("१०८ में से ० जप");
             txtJapaRounds.setText("माला चक्र: ०");
         });
 
+        txtJapaCount.setText("०");
         btnJapaClose.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
+    }
+
+    private String toDevanagari(int number) {
+        String numStr = String.valueOf(number);
+        StringBuilder sb = new StringBuilder();
+        for (char c : numStr.toCharArray()) {
+            if (c >= '0' && c <= '9') {
+                sb.append((char) ('\u0966' + (c - '0')));
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 
     private void vibrateTap(Vibrator vibrator, int ms) {

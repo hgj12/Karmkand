@@ -41,7 +41,7 @@
                     android:layout_height="22dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_nav_mantra"
-                    app:tint="@color/gold_light" />
+                    app:tint="@color/primary" />
             </FrameLayout>
 
             <LinearLayout
@@ -65,7 +65,7 @@
                         android:ellipsize="end"
                         android:fontFamily="@font/sanskrit"
                         android:maxLines="1"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_primary_on_light"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -74,13 +74,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_xs"
-                        android:background="@drawable/glass_pill_selected"
+                        android:background="@drawable/pill_button_gold_bg"
+                        android:fontFamily="@font/sanskrit"
                         android:paddingStart="8dp"
                         android:paddingTop="2dp"
                         android:paddingEnd="8dp"
                         android:paddingBottom="2dp"
-                        android:textColor="@color/gold_accent"
-                        android:textSize="11sp" />
+                        android:textColor="@color/primary_dark"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -90,7 +92,7 @@
                     android:layout_marginTop="2dp"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:textColor="@color/text_tertiary"
+                    android:textColor="@color/text_secondary_on_light"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -101,7 +103,7 @@
                 android:layout_marginStart="@dimen/spacing_xs"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_chevron_right"
-                app:tint="@color/gold_accent" />
+                app:tint="@color/text_gold_on_light" />
 
         </LinearLayout>
 

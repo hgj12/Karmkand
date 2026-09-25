@@ -22,7 +22,7 @@
         android:contentDescription="Decrease font size"
         android:padding="11dp"
         android:src="@drawable/ic_text_size"
-        app:tint="@color/text_secondary" />
+        app:tint="@color/primary" />
 
     <!-- Font Size Up -->
     <androidx.appcompat.widget.AppCompatTextView
@@ -32,7 +32,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:text="A+"
-        android:textColor="@color/gold_light"
+        android:textColor="@color/primary"
         android:textSize="15sp"
         android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
         android:contentDescription="@string/action_japa_counter"
         android:padding="10dp"
         android:src="@drawable/ic_counter"
-        app:tint="@color/gold_accent" />
+        app:tint="@color/primary" />
 
     <!-- Favorite / Bookmark -->
     <androidx.appcompat.widget.AppCompatImageButton
@@ -63,7 +63,7 @@
         android:contentDescription="@string/action_favorite"
         android:padding="10dp"
         android:src="@drawable/ic_favorite_border"
-        app:tint="@color/gold_accent" />
+        app:tint="@color/primary" />
 
     <View
         android:layout_width="1dp"
@@ -81,7 +81,7 @@
         android:contentDescription="@string/action_copy"
         android:padding="11dp"
         android:src="@drawable/ic_copy"
-        app:tint="@color/text_secondary" />
+        app:tint="@color/primary" />
 
     <!-- Share -->
     <androidx.appcompat.widget.AppCompatImageButton
@@ -92,6 +92,6 @@
         android:contentDescription="@string/action_share"
         android:padding="11dp"
         android:src="@drawable/ic_share"
-        app:tint="@color/text_secondary" />
+        app:tint="@color/primary" />
 
 </LinearLayout>

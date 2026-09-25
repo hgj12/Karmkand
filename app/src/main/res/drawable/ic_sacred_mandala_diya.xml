@@ -1,0 +1,84 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+
+    <!-- 1. Outer Sacred Aura / Halo (Subtle Celestial Radiance) -->
+    <path
+        android:fillColor="#15FFD54F"
+        android:pathData="M64,6 C96,6 122,32 122,64 C122,96 96,122 64,122 C32,122 6,96 6,64 C6,32 32,6 64,6 Z" />
+
+    <!-- 2. Concentric Sacred Mandala Rings (Delicate Thin Gold) -->
+    <path
+        android:strokeColor="#35FFD54F"
+        android:strokeWidth="1.2"
+        android:pathData="M64,12 C92.7,12 116,35.3 116,64 C116,92.7 92.7,116 64,116 C35.3,116 12,92.7 12,64 C12,35.3 35.3,12 64,12 Z" />
+
+    <path
+        android:strokeColor="#20FFE082"
+        android:strokeWidth="1.0"
+        android:pathData="M64,18 C89.4,18 110,38.6 110,64 C110,89.4 89.4,110 64,110 C38.6,110 18,89.4 18,64 C18,38.6 38.6,18 64,18 Z" />
+
+    <!-- 3. Sacred Eight-Point Mandala Rays (Spiritual Compass Points) -->
+    <path
+        android:fillColor="#45FFD54F"
+        android:pathData="M64,8 L66,13 L64,15 L62,13 Z
+                          M64,113 L66,115 L64,120 L62,115 Z
+                          M8,64 L13,62 L15,64 L13,66 Z
+                          M113,64 L115,62 L120,64 L115,66 Z
+                          M24,24 L27,28 L25,30 L21,27 Z
+                          M104,24 L107,27 L103,30 L101,28 Z
+                          M24,104 L27,100 L30,103 L27,107 Z
+                          M104,104 L107,101 L103,98 L101,100 Z" />
+
+    <!-- 4. Sacred Lotus Petals Cradling the Base (Purity & Devotion) -->
+    <!-- Left Lotus Petal -->
+    <path
+        android:fillColor="#30FFB300"
+        android:pathData="M40,98 C30,92 26,82 32,76 C40,82 44,92 40,98 Z" />
+    <path
+        android:fillColor="#40FFD54F"
+        android:pathData="M48,101 C38,96 36,88 42,82 C48,88 52,96 48,101 Z" />
+
+    <!-- Right Lotus Petal -->
+    <path
+        android:fillColor="#30FFB300"
+        android:pathData="M88,98 C98,92 102,82 96,76 C88,82 84,92 88,98 Z" />
+    <path
+        android:fillColor="#40FFD54F"
+        android:pathData="M80,101 C90,96 92,88 86,82 C80,88 76,96 80,101 Z" />
+
+    <!-- 5. Ceremonial Diya Vessel (Aarti & Divine Illumination) -->
+    <!-- Diya Base / Pedestal -->
+    <path
+        android:fillColor="@color/gold_dark"
+        android:pathData="M52,112 L76,112 C75,108 71,106 64,106 C57,106 53,108 52,112 Z" />
+
+    <!-- Diya Curved Body -->
+    <path
+        android:fillColor="@color/gold_accent"
+        android:pathData="M34,94 C34,105 47,110 64,110 C81,110 94,105 94,94 C94,93 93,92 92,92 C84,96 74,98 64,98 C54,98 44,96 36,92 C35,92 34,93 34,94 Z" />
+
+    <!-- Diya Inner Rim (Luminous Gold Lip) -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M35,93 C43,96 53,97.5 64,97.5 C75,97.5 85,96 93,93 C85,95 75,96 64,96 C53,96 43,95 35,93 Z" />
+
+    <!-- 6. Akhand Jyoti Flame (Ascending Spiritual Light) -->
+    <!-- Outer Warm Saffron/Gold Flame Aura -->
+    <path
+        android:fillColor="#40FF8F00"
+        android:pathData="M64,68 C74,80 80,88 78,96 C76,99 71,101 64,101 C57,101 52,99 50,96 C48,88 54,80 64,68 Z" />
+
+    <!-- Inner Luminous Golden Flame -->
+    <path
+        android:fillColor="#90FFD54F"
+        android:pathData="M64,76 C70,84 74,90 73,95 C72,98 69,99 64,99 C59,99 56,98 55,95 C54,90 58,84 64,76 Z" />
+
+    <!-- Flame Heart (Radiant White-Gold Core) -->
+    <path
+        android:fillColor="#CCFFFDE7"
+        android:pathData="M64,84 C67,88 69,92 68,95 C67,97 66,98 64,98 C62,98 61,97 60,95 C59,92 61,88 64,84 Z" />
+
+</vector>

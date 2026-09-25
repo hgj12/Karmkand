@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="@color/white"
+        android:textColor="@color/text_primary_on_light"
         android:textSize="17sp"
         android:textStyle="bold" />
 
@@ -29,14 +29,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/spacing_md"
-        android:textColor="@color/text_tertiary"
+        android:textColor="@color/text_gold_on_light"
         android:textSize="13sp" />
 
     <androidx.appcompat.widget.AppCompatRadioButton
         android:id="@+id/rbLangSelected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:buttonTint="@color/gold_accent"
+        android:buttonTint="@color/primary"
         android:clickable="false"
         android:focusable="false" />
 

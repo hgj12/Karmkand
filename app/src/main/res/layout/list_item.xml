@@ -44,7 +44,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/sanskrit"
                     android:text="१"
-                    android:textColor="@color/gold_light"
+                    android:textColor="@color/primary"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </FrameLayout>
@@ -61,7 +61,7 @@
                 android:gravity="start|center_vertical"
                 android:lineSpacingExtra="2dp"
                 android:maxLines="2"
-                android:textColor="@color/white"
+                android:textColor="@color/text_primary_on_light"
                 android:textSize="16sp" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -69,7 +69,7 @@
                 android:layout_height="20dp"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_chevron_right"
-                app:tint="@color/gold_accent" />
+                app:tint="@color/text_gold_on_light" />
 
         </LinearLayout>
 

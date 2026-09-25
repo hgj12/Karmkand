@@ -45,7 +45,7 @@
                         android:fontFamily="@font/sanskrit"
                         android:maxLines="1"
                         android:text="@string/header"
-                        android:textColor="@color/white"
+                        android:textColor="@color/primary"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/app_subtitle"
-                        android:textColor="@color/gold_light"
+                        android:textColor="@color/text_gold_on_light"
                         android:textSize="11sp" />
 
                 </LinearLayout>
@@ -67,7 +67,7 @@
                     android:contentDescription="@string/search_title"
                     android:padding="10dp"
                     android:src="@drawable/ic_search"
-                    app:tint="@color/gold_light"
+                    app:tint="@color/primary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btnChangeLanguage"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +81,7 @@
                     android:padding="10dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_language"
-                    app:tint="@color/gold_light"
+                    app:tint="@color/primary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

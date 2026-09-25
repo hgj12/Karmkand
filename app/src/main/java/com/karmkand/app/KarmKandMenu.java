@@ -8,6 +8,9 @@ import static com.karmkand.app.Utils.Utility.MAINCATEGORY.RAJOPACHARPUJA;
 import static com.karmkand.app.Utils.Utility.MAINCATEGORY.SANDHYAVIDHI;
 
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -17,6 +20,7 @@ import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -166,6 +170,14 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
         View btnHeroRead = findViewById(R.id.btnHeroRead);
         if (btnHeroRead != null) {
             btnHeroRead.setOnClickListener(v -> openCategory(MANTRA.ordinal()));
+        }
+        View btnHeroCopy = findViewById(R.id.btnHeroCopy);
+        if (btnHeroCopy != null) {
+            btnHeroCopy.setOnClickListener(v -> copyDailyMantra());
+        }
+        View btnHeroShare = findViewById(R.id.btnHeroShare);
+        if (btnHeroShare != null) {
+            btnHeroShare.setOnClickListener(v -> shareDailyMantra());
         }
 
         mAdView = findViewById(R.id.adView);
@@ -334,8 +346,8 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
     }
 
     private void highlightBottomTab(int index) {
-        int colorSelected = getResources().getColor(R.color.gold_light);
-        int colorUnselected = getResources().getColor(R.color.text_tertiary);
+        int colorSelected = getResources().getColor(R.color.primary);
+        int colorUnselected = getResources().getColor(R.color.text_tertiary_on_light);
 
         if (ivTabHome != null) ivTabHome.setColorFilter(index == 0 ? colorSelected : colorUnselected);
         if (tvTabHome != null) tvTabHome.setTextColor(index == 0 ? colorSelected : colorUnselected);
@@ -744,6 +756,42 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
             } catch (Exception ex) {
                 utility.showLog(ex);
             }
+        }
+    }
+
+    private void copyDailyMantra() {
+        String title = LocaleStringHelper.getString(this, R.string.daily_mantra_tag);
+        String mantraText = LocaleStringHelper.getString(this, R.string.daily_mantra_text);
+        String meaning = LocaleStringHelper.getString(this, R.string.daily_mantra_meaning);
+
+        String textToCopy = String.format("%s\n\n%s\n\nभावार्थ:\n%s", title, mantraText, meaning);
+
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        if (clipboard != null) {
+            ClipData clip = ClipData.newPlainText("Mantra", textToCopy);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, LocaleStringHelper.getString(this, R.string.copied_toast), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void shareDailyMantra() {
+        String title = LocaleStringHelper.getString(this, R.string.daily_mantra_tag);
+        String mantraText = LocaleStringHelper.getString(this, R.string.daily_mantra_text);
+        String meaning = LocaleStringHelper.getString(this, R.string.daily_mantra_meaning);
+        String appName = getString(R.string.app_name);
+        String playStoreUrl = "https://play.google.com/store/apps/details?id=" + getPackageName();
+
+        String shareMessage = String.format("%s\n\n%s\n\nभावार्थ:\n%s\n\n— %s\n%s",
+                title, mantraText, meaning, appName, playStoreUrl);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+
+        try {
+            startActivity(Intent.createChooser(intent, LocaleStringHelper.getString(this, R.string.share_chooser_title)));
+        } catch (Exception e) {
+            utility.showLog(e);
         }
     }
 }

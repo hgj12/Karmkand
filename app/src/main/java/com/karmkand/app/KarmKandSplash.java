@@ -10,12 +10,17 @@ import android.view.View;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 @SuppressLint("CustomSplashScreen")
 public class KarmKandSplash extends AppCompatActivity {
 
-    private static final int SPLASH_DELAY = 2000;
+    private static final int SPLASH_DELAY = 2500;
     private Handler handler;
     private Runnable navigateRunnable;
 
@@ -45,7 +50,20 @@ public class KarmKandSplash extends AppCompatActivity {
 
         setContentView(R.layout.splash);
 
-        // ✅ FIX 5 — full screen flags
+        // ✅ FIX 5 — safe area insets handling
+        // Ensures bottom headline & status bar/notch are never clipped across any device
+        View splashRoot = findViewById(R.id.splashRoot);
+        if (splashRoot != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(splashRoot, (v, windowInsets) -> {
+                Insets insets = windowInsets.getInsets(
+                        WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout()
+                );
+                v.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+                return windowInsets;
+            });
+        }
+
+        // ✅ FIX 6 — full screen / light system bars
         makeFullScreen();
 
         // Navigate after delay
@@ -67,13 +85,21 @@ public class KarmKandSplash extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // Android 11+
             getWindow().setDecorFitsSystemWindows(false);
-        } else {
-            // Android below 11
+            WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+            if (controller != null) {
+                controller.setAppearanceLightStatusBars(true);
+                controller.setAppearanceLightNavigationBars(true);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().getDecorView().setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                             | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            );
+        } else {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
             );
         }
     }

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="186dp"
+    android:layout_height="200dp"
     android:background="@drawable/bg_spiritual_gradient"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -10,22 +10,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingEnd="@dimen/spacing_lg"
     android:paddingBottom="@dimen/spacing_lg"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Light">
 
-    <!-- Glowing Sacred Icon -->
+    <!-- Glowing Sacred Master Emblem (Mandala + Diya + Canonical ॐ) -->
     <FrameLayout
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/glass_circle_button">
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:background="@drawable/glass_circle_button"
+        android:padding="3dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/ic_om"
-            app:tint="@color/gold_light" />
+            app:srcCompat="@drawable/ic_sacred_mandala_diya" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sanskrit"
+            android:text="ॐ"
+            android:textColor="@color/gold_light"
+            android:textSize="17sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -34,8 +45,8 @@
         android:layout_marginTop="@dimen/spacing_sm"
         android:fontFamily="@font/sanskrit"
         android:text="@string/header"
-        android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textColor="@color/primary"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -45,7 +56,16 @@
         android:layout_marginTop="2dp"
         android:fontFamily="@font/sanskrit"
         android:text="@string/nav_header_subtitle"
-        android:textColor="@color/gold_light"
+        android:textColor="@color/text_gold_on_light"
         android:textSize="13sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/sanskrit"
+        android:text="॥ सर्वे भवन्तु सुखिनः ॥"
+        android:textColor="@color/text_secondary_on_light"
+        android:textSize="11sp" />
 
 </LinearLayout>

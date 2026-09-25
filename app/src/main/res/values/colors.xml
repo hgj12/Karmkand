@@ -3,7 +3,7 @@
 
     <!-- Brand Sacred Colors -->
     <color name="primary">#7B1118</color>
-    <color name="ic_launcher_background">#7B1118</color>
+    <color name="ic_launcher_background">#FFCA28</color>
     <color name="primary_dark">#52090F</color>
     <color name="accent">#E6A122</color>
 
@@ -15,21 +15,26 @@
     <color name="item_border">#96ffffff</color>
     <color name="primary_container">#42080D</color>
 
-    <!-- Modern Spiritual Liquid Glass Tokens -->
-    <color name="surface_bg">#0D0608</color>
-    <color name="surface_bg_gradient_start">#1F0E13</color>
-    <color name="surface_bg_gradient_end">#0B0406</color>
-    <color name="surface_dark">#160A0E</color>
-    <color name="surface_card">#B3241217</color>
-    <color name="glass_surface">#A6221116</color>
-    <color name="glass_surface_elevated">#CC301720</color>
-    <color name="glass_surface_light">#33FFE3A8</color>
-    <color name="glass_border">#33E6A122</color>
-    <color name="glass_border_focused">#66FFD56B</color>
+    <!-- Modern Spiritual Warm Light Tokens -->
+    <color name="surface_bg">#FDF8F0</color>
+    <color name="surface_bg_gradient_start">#FFF9F0</color>
+    <color name="surface_bg_gradient_end">#F5EEE2</color>
+    <color name="surface_dark">#EFE7DA</color>
+    <color name="text_primary_on_light">#3E1820</color>
+    <color name="text_secondary_on_light">#5E4A47</color>
+    <color name="text_tertiary_on_light">#7C6360</color>
+    <color name="text_gold_on_light">#945E00</color>
+    <color name="surface_card">#FFFFFDF8</color>
+    <color name="glass_surface">#FFFFFDF8</color>
+    <color name="glass_surface_elevated">#FFFDF6EB</color>
+    <color name="glass_surface_light">#FFF9EEDC</color>
+    <color name="glass_border">#26B37D1A</color>
+    <color name="glass_border_focused">#66B37D1A</color>
 
     <!-- Divine Golden Tints -->
     <color name="gold_accent">#E6A122</color>
     <color name="gold_light">#FFD56B</color>
+    <color name="gold_dark">#B37D1A</color>
     <color name="gold_soft">#FFF3D1</color>
     <color name="card_stroke">#33E6A122</color>
     <color name="card_stroke_focused">#80FFD56B</color>
@@ -45,8 +50,8 @@
     <!-- Interactive & Feedback -->
     <color name="ripple_light">#26FFFFFF</color>
     <color name="ripple_gold">#33E6A122</color>
-    <color name="bottom_nav_bg">#F213090C</color>
-    <color name="dialog_bg">#F5180B0F</color>
+    <color name="bottom_nav_bg">#F8FFFDF8</color>
+    <color name="dialog_bg">#FFFFFDF8</color>
 
     <!-- Gradients -->
     <color name="center_color">#ebf7f7f7</color>

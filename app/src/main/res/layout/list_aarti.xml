@@ -30,6 +30,33 @@
             android:paddingEnd="@dimen/spacing_lg"
             android:paddingBottom="@dimen/spacing_lg">
 
+            <!-- Subtle Ornamental Diya Header for Aarti Stanzas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_md"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="36dp"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_gold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_diya"
+                    app:tint="@color/primary" />
+
+                <View
+                    android:layout_width="36dp"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_gold" />
+            </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvDetail"
                 android:layout_width="match_parent"
@@ -38,7 +65,7 @@
                 android:gravity="center_horizontal"
                 android:lineSpacingExtra="5dp"
                 android:lineSpacingMultiplier="1.45"
-                android:textColor="@color/white"
+                android:textColor="@color/text_primary_on_light"
                 android:textSize="17sp" />
 
         </LinearLayout>

@@ -4,8 +4,8 @@
     <style name="Theme.Karmkand.Splash" parent="Theme.SplashScreen">
 
         <!-- ✅ Background color shown during system splash (before your Activity loads) -->
-        <!-- Use your primary color or match your bg image's dominant color -->
-        <item name="windowSplashScreenBackground">@color/primary</item>
+        <!-- Matches warm light spiritual background -->
+        <item name="windowSplashScreenBackground">@color/surface_bg</item>
 
         <!-- ✅ Hide the system splash icon completely -->
         <!-- Set to a fully transparent drawable so nothing shows on system splash -->

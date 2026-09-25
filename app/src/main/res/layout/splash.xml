@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/splashRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_spiritual_gradient">
 
-    <!-- Center Spiritual Emblem -->
+    <!-- Center Spiritual Emblem Container -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/llSplashCenter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
+        app:layout_constraintBottom_toTopOf="@+id/llSplashBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintVertical_bias="0.44">
 
-        <!-- Glowing Aura Icon -->
+        <!-- Glowing Sacred Master Emblem (Mandala + Diya + Flame + Canonical ॐ) -->
         <FrameLayout
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="116dp"
+            android:layout_height="116dp"
             android:background="@drawable/glass_circle_button"
-            android:elevation="8dp">
+            android:elevation="8dp"
+            android:padding="6dp">
 
+            <!-- Diya & Mandala Vector Artwork -->
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_om"
-                app:tint="@color/gold_light" />
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_sacred_mandala_diya" />
+
+            <!-- Authentic Sacred Devanagari Om from Sanskrit Typography -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/sanskrit"
+                android:shadowColor="#66FFB300"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:text="ॐ"
+                android:textColor="@color/gold_light"
+                android:textSize="38sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -38,44 +60,69 @@
             android:id="@+id/txtSplashTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_xl"
+            android:layout_marginTop="18dp"
             android:fontFamily="@font/sanskrit"
+            android:letterSpacing="0.04"
             android:text="@string/header"
-            android:textColor="@color/white"
+            android:textColor="@color/primary"
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <!-- Sacred Motto Tagline -->
+        <!-- Sacred Invocation Motto -->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtSplashTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_xs"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/sanskrit"
+            android:gravity="center"
             android:text="@string/nav_header_subtitle"
-            android:textColor="@color/gold_light"
-            android:textSize="17sp" />
+            android:textColor="@color/text_gold_on_light"
+            android:textSize="16sp" />
 
-        <!-- Subtitle -->
+        <!-- Spiritual Purpose Subtitle -->
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
-            android:text="@string/app_subtitle"
-            android:textColor="@color/text_tertiary"
+            android:fontFamily="@font/sanskrit"
+            android:gravity="center"
+            android:text="मन्त्र • आरती • पूजा • नित्य साधना"
+            android:textColor="@color/text_secondary_on_light"
             android:textSize="13sp" />
 
     </LinearLayout>
 
-    <!-- Bottom Sacred Diya Accent -->
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="36dp"
-        android:src="@drawable/ic_diya"
-        app:tint="@color/gold_accent"
+    <!-- Bottom Peace Invocation -->
+    <LinearLayout
+        android:id="@+id/llSplashBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_lg"
+        android:paddingEnd="@dimen/spacing_lg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_diya"
+            app:tint="@color/gold_accent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sanskrit"
+            android:gravity="center"
+            android:text="॥ ॐ शान्तिः शान्तिः शान्तिः ॥"
+            android:textColor="@color/text_tertiary_on_light"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

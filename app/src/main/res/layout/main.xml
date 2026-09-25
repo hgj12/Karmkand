@@ -49,7 +49,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ic_sun"
-                        app:tint="@color/gold_light" />
+                        app:tint="@color/gold_dark" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -64,7 +64,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/sanskrit"
                             android:text="@string/greeting_morning"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_primary_on_light"
                             android:textSize="17sp"
                             android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="॥ ॐ नमः शिवाय ॥"
-                            android:textColor="@color/gold_light"
+                            android:textColor="@color/text_gold_on_light"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -118,8 +118,8 @@
                             android:imeOptions="actionSearch"
                             android:inputType="text"
                             android:maxLines="1"
-                            android:textColor="@color/white"
-                            android:textColorHint="@color/text_tertiary"
+                            android:textColor="@color/text_primary_on_light"
+                            android:textColorHint="@color/text_secondary_on_light"
                             android:textSize="14sp" />
 
                         <androidx.appcompat.widget.AppCompatImageButton
@@ -137,7 +137,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- Daily Mantra Liquid Glass Hero Card -->
+                <!-- Daily Mantra Sacred Manuscript Hero Card -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardDailyMantra"
                     android:layout_width="match_parent"
@@ -147,12 +147,12 @@
                     android:layout_marginBottom="@dimen/spacing_lg"
                     app:cardBackgroundColor="@android:color/transparent"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="4dp">
+                    app:cardElevation="3dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/glass_hero_card_bg"
+                        android:background="@drawable/card_dainik_mantra_bg"
                         android:orientation="vertical"
                         android:padding="@dimen/spacing_lg">
 
@@ -164,32 +164,48 @@
                             android:orientation="horizontal">
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
                                 android:src="@drawable/ic_diya"
-                                app:tint="@color/gold_accent" />
+                                app:tint="@color/primary" />
 
-                            <androidx.appcompat.widget.AppCompatTextView
+                            <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/spacing_xs"
+                                android:layout_marginStart="8dp"
                                 android:layout_weight="1"
-                                android:text="@string/daily_mantra_title"
-                                android:textColor="@color/gold_light"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sanskrit"
+                                    android:text="@string/daily_mantra_title"
+                                    android:textColor="@color/primary"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="॥ नित्य ध्यान एवं साधना ॥"
+                                    android:textColor="@color/text_gold_on_light"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_pill_selected"
-                                android:paddingStart="8dp"
-                                android:paddingTop="2dp"
-                                android:paddingEnd="8dp"
-                                android:paddingBottom="2dp"
+                                android:background="@drawable/pill_button_gold_bg"
+                                android:fontFamily="@font/sanskrit"
+                                android:paddingStart="10dp"
+                                android:paddingTop="3dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="3dp"
                                 android:text="@string/daily_mantra_tag"
-                                android:textColor="@color/gold_light"
-                                android:textSize="11sp" />
+                                android:textColor="@color/primary_dark"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -200,89 +216,159 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_md"
                             android:fontFamily="@font/sanskrit"
-                            android:lineSpacingExtra="4dp"
+                            android:lineSpacingExtra="5dp"
                             android:text="@string/daily_mantra_text"
-                            android:textColor="@color/white"
-                            android:textSize="16sp"
+                            android:textColor="@color/text_primary_on_light"
+                            android:textSize="17sp"
                             android:textStyle="bold" />
 
-                        <!-- Shloka Meaning -->
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txtDailyMeaning"
+                        <!-- Subtle Ornamental Gold Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="#26B37D1A" />
+
+                        <!-- Shloka Meaning (भावार्थ) -->
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/spacing_xs"
-                            android:lineSpacingMultiplier="1.2"
-                            android:text="@string/daily_mantra_meaning"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
+                            android:orientation="vertical">
 
-                        <!-- Hero Action Buttons -->
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/sanskrit"
+                                android:text="भावार्थ :"
+                                android:textColor="@color/text_gold_on_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtDailyMeaning"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:lineSpacingMultiplier="1.25"
+                                android:text="@string/daily_mantra_meaning"
+                                android:textColor="@color/text_secondary_on_light"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <!-- Hero Action Buttons Row -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/spacing_md"
-                            android:gravity="end"
+                            android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <!-- Japa Mala Counter Trigger -->
+                            <!-- Japa Mala Counter Trigger (Primary Action) -->
                             <LinearLayout
                                 android:id="@+id/btnHeroJapa"
                                 android:layout_width="wrap_content"
                                 android:layout_height="36dp"
-                                android:background="@drawable/glass_card_elevated_bg"
+                                android:background="@drawable/pill_button_gold_bg"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="?attr/selectableItemBackground"
                                 android:gravity="center"
                                 android:orientation="horizontal"
-                                android:paddingStart="@dimen/spacing_md"
-                                android:paddingEnd="@dimen/spacing_md">
+                                android:paddingStart="12dp"
+                                android:paddingEnd="12dp">
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="16dp"
                                     android:layout_height="16dp"
                                     android:src="@drawable/ic_counter"
-                                    app:tint="@color/gold_accent" />
+                                    app:tint="@color/primary_dark" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="6dp"
+                                    android:fontFamily="@font/sanskrit"
                                     android:text="@string/action_japa_counter"
-                                    android:textColor="@color/gold_light"
+                                    android:textColor="@color/primary_dark"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
 
                             <!-- Read Button -->
                             <LinearLayout
                                 android:id="@+id/btnHeroRead"
                                 android:layout_width="wrap_content"
                                 android:layout_height="36dp"
-                                android:layout_marginStart="@dimen/spacing_sm"
-                                android:background="@drawable/glass_pill_unselected"
+                                android:layout_marginStart="6dp"
+                                android:background="@drawable/pill_button_outline_bg"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:foreground="?attr/selectableItemBackground"
                                 android:gravity="center"
                                 android:orientation="horizontal"
-                                android:paddingStart="@dimen/spacing_md"
-                                android:paddingEnd="@dimen/spacing_md">
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp">
 
                                 <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="16dp"
-                                    android:layout_height="16dp"
-                                    android:src="@drawable/ic_lotus"
-                                    app:tint="@color/white" />
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/ic_nav_mantra"
+                                    app:tint="@color/primary" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginStart="6dp"
+                                    android:layout_marginStart="4dp"
                                     android:text="@string/action_read"
-                                    android:textColor="@color/white"
-                                    android:textSize="12sp" />
+                                    android:textColor="@color/primary"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <!-- Copy Button -->
+                            <LinearLayout
+                                android:id="@+id/btnHeroCopy"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="6dp"
+                                android:background="@drawable/pill_button_outline_bg"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:contentDescription="@string/action_copy">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_copy"
+                                    app:tint="@color/primary" />
+                            </LinearLayout>
+
+                            <!-- Share Button -->
+                            <LinearLayout
+                                android:id="@+id/btnHeroShare"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="6dp"
+                                android:background="@drawable/pill_button_outline_bg"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:contentDescription="@string/action_share">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_share"
+                                    app:tint="@color/primary" />
                             </LinearLayout>
 
                         </LinearLayout>
@@ -305,7 +391,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/ic_lotus"
-                        app:tint="@color/gold_accent" />
+                        app:tint="@color/gold_dark" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -313,7 +399,7 @@
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/sanskrit"
                         android:text="पवित्र अनुष्ठान एवं संग्रह"
-                        android:textColor="@color/gold_light"
+                        android:textColor="@color/text_gold_on_light"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -352,7 +438,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -360,14 +446,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_lotus"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -378,7 +464,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_sandhya_vidhi"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -387,7 +473,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_sandhya"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -411,7 +497,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -419,14 +505,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_nav_mantra"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -437,7 +523,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_mantra"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -446,7 +532,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_mantra"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -480,7 +566,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -488,14 +574,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_havan"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -506,7 +592,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_hom"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -515,7 +601,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_hom"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -539,7 +625,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -547,14 +633,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_diya"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -565,7 +651,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_aarti"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -574,7 +660,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_aarti"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -607,7 +693,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -615,14 +701,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_kalash"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -633,7 +719,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_avahan"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -642,7 +728,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_avahan"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -666,7 +752,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/glass_card_bg"
+                                android:background="@drawable/card_category_bg"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="@dimen/spacing_md">
@@ -674,14 +760,14 @@
                                 <FrameLayout
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
-                                    android:background="@drawable/glass_circle_button">
+                                    android:background="@drawable/card_icon_circle_bg">
 
                                     <androidx.appcompat.widget.AppCompatImageView
                                         android:layout_width="26dp"
                                         android:layout_height="26dp"
                                         android:layout_gravity="center"
                                         android:src="@drawable/ic_puja_thali"
-                                        app:tint="@color/gold_light" />
+                                        app:tint="@color/primary" />
                                 </FrameLayout>
 
                                 <androidx.appcompat.widget.AppCompatTextView
@@ -692,7 +778,7 @@
                                     android:fontFamily="@font/sanskrit"
                                     android:gravity="center"
                                     android:text="@string/category_rajopachar_puja"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_primary_on_light"
                                     android:textSize="15sp"
                                     android:textStyle="bold" />
 
@@ -701,7 +787,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/category_desc_rajopchar"
-                                    android:textColor="@color/gold_accent"
+                                    android:textColor="@color/text_gold_on_light"
                                     android:textSize="11sp" />
 
                             </LinearLayout>
@@ -769,19 +855,38 @@
                     android:padding="@dimen/spacing_xxl"
                     android:visibility="gone">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_search"
-                        app:tint="@color/text_tertiary" />
+                    <FrameLayout
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/glass_circle_button"
+                        android:padding="12dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_diya"
+                            app:tint="@color/gold_accent" />
+                    </FrameLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_md"
+                        android:fontFamily="@font/sanskrit"
                         android:text="@string/search_no_results"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="15sp" />
+                        android:textColor="@color/text_primary_on_light"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:fontFamily="@font/sanskrit"
+                        android:text="॥ मन्त्र, आरती या स्तोत्र का नाम लिखें ॥"
+                        android:textColor="@color/text_secondary_on_light"
+                        android:textSize="13sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -817,7 +922,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/sanskrit"
                         android:text="॥ पवित्र संग्रह ॥"
-                        android:textColor="@color/gold_light"
+                        android:textColor="@color/text_gold_on_light"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -838,11 +943,19 @@
                     android:padding="@dimen/spacing_xxl"
                     android:visibility="gone">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:src="@drawable/ic_favorite_border"
-                        app:tint="@color/text_tertiary" />
+                    <FrameLayout
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:background="@drawable/glass_circle_button"
+                        android:padding="14dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_lotus"
+                            app:tint="@color/gold_light" />
+                    </FrameLayout>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -850,8 +963,8 @@
                         android:layout_marginTop="@dimen/spacing_md"
                         android:fontFamily="@font/sanskrit"
                         android:text="@string/tab_favorites_empty_title"
-                        android:textColor="@color/white"
-                        android:textSize="17sp"
+                        android:textColor="@color/text_primary_on_light"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -861,7 +974,7 @@
                         android:gravity="center"
                         android:lineSpacingMultiplier="1.2"
                         android:text="@string/tab_favorites_empty_desc"
-                        android:textColor="@color/text_tertiary"
+                        android:textColor="@color/text_secondary_on_light"
                         android:textSize="13sp" />
                 </LinearLayout>
 
@@ -912,7 +1025,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/ic_nav_home"
-                app:tint="@color/gold_light" />
+                app:tint="@color/primary" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTabHome"
@@ -920,7 +1033,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="@string/nav_home"
-                android:textColor="@color/gold_light"
+                android:textColor="@color/primary"
                 android:textSize="11sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -942,7 +1055,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/ic_nav_mantra"
-                app:tint="@color/text_tertiary" />
+                app:tint="@color/text_tertiary_on_light" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTabMantras"
@@ -950,7 +1063,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="@string/nav_mantra"
-                android:textColor="@color/text_tertiary"
+                android:textColor="@color/text_tertiary_on_light"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -971,7 +1084,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/ic_nav_aarti"
-                app:tint="@color/text_tertiary" />
+                app:tint="@color/text_tertiary_on_light" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTabAartis"
@@ -979,7 +1092,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="@string/nav_aarti"
-                android:textColor="@color/text_tertiary"
+                android:textColor="@color/text_tertiary_on_light"
                 android:textSize="11sp" />
         </LinearLayout>
 
@@ -1000,7 +1113,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:src="@drawable/ic_nav_saved"
-                app:tint="@color/text_tertiary" />
+                app:tint="@color/text_tertiary_on_light" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTabSaved"
@@ -1008,7 +1121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="@string/nav_saved"
-                android:textColor="@color/text_tertiary"
+                android:textColor="@color/text_tertiary_on_light"
                 android:textSize="11sp" />
         </LinearLayout>
 

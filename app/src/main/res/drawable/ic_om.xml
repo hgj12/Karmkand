@@ -3,14 +3,47 @@
     android:height="64dp"
     android:viewportWidth="64"
     android:viewportHeight="64">
-    <!-- Stylized Om/Spiritual Motif Icon -->
+
+    <!-- Subtle Sacred Halo Glow -->
     <path
-        android:fillColor="@color/gold_accent"
-        android:pathData="M32,4C16.54,4 4,16.54 4,32C4,47.46 16.54,60 32,60C47.46,60 60,47.46 60,32C60,16.54 47.46,4 32,4ZM32,56C18.77,56 8,45.23 8,32C8,18.77 18.77,8 32,8C45.23,8 56,18.77 56,32C56,45.23 45.23,56 32,56Z" />
+        android:fillColor="#18FFD54F"
+        android:pathData="M32,3 C48,3 61,16 61,32 C61,48 48,61 32,61 C16,61 3,48 3,32 C3,16 16,3 32,3 Z" />
+
+    <!-- Delicate Concentric Ring -->
     <path
-        android:fillColor="@color/gold_accent"
-        android:pathData="M32,14C22.06,14 14,22.06 14,32C14,41.94 22.06,50 32,50C41.94,50 50,41.94 50,32C50,22.06 41.94,14 32,14ZM32,46C24.28,46 18,39.72 18,32C18,24.28 24.28,18 32,18C39.72,18 46,24.28 46,32C46,39.72 39.72,46 32,46Z" />
+        android:strokeColor="#35FFD54F"
+        android:strokeWidth="1.2"
+        android:pathData="M32,7 C45.8,7 57,18.2 57,32 C57,45.8 45.8,57 32,57 C18.2,57 7,45.8 7,32 C7,18.2 18.2,7 32,7 Z" />
+
+    <!-- The Sacred ॐ (Om) Glyph -->
+    <!-- Top-Left Upper Loop of '3' -->
     <path
-        android:fillColor="@color/gold_accent"
-        android:pathData="M32,24C27.58,24 24,27.58 24,32C24,36.42 27.58,40 32,40C36.42,40 40,36.42 40,32C40,27.58 36.42,24 32,24Z" />
+        android:fillColor="@color/gold_light"
+        android:pathData="M27.5,18.5 C25.8,17 22.8,15.2 18.8,15.6 C14.8,16 11.2,19.2 11.2,23.2 C11.2,26.8 14,29.6 17.6,30 C20.4,30.4 23.2,29.2 24.8,27.2 L28,29.6 C25.6,32.8 21.6,34.4 17.2,34 C11.2,33.6 6.8,28.8 6.8,22.8 C6.8,16.4 12,11.6 18.8,11.2 C24,10.8 28.8,13.6 30.8,16.4 Z" />
+
+    <!-- Bottom-Left Lower Loop & Soaring Tail -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M24,27.2 C21.6,28.8 18.4,29.6 15.2,30.4 C11.2,31.6 8,35.2 8,40 C8,46 13.2,50.4 19.6,50.4 C25.6,50.4 30.4,46.8 33.2,42.4 C36,38 40,33.6 44.8,30.4 L46.8,34 C41.2,37.6 37.6,42.4 34.4,47.2 C30.4,53.2 24.4,56 18.4,55.6 C9.6,55.2 2.8,48.8 2.8,40 C2.8,33.2 7.2,28 12.8,26 C15.6,25.2 18.4,24.8 21.2,23.6 Z" />
+
+    <!-- Central Connecting Bridge -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M21.6,28.8 C27.2,29.6 33.6,31.2 38.4,35.2 C43.2,39.2 45.6,44.8 45.6,51.2 L41.2,51.2 C41.2,46.4 39.2,42 35.2,38.8 C31.2,35.6 26,34 20.8,33.2 Z" />
+
+    <!-- Right Upright Crescent Branch -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M44,19.2 C48.8,19.2 52.8,23.2 52.8,28.8 C52.8,36 48.8,43.2 44.8,48 L41.6,44.8 C45.2,40.8 48,34.8 48,28.8 C48,25.6 46,23.6 43.2,23.6 C40.8,23.6 38.8,25.2 38,27.2 L34.4,25.2 C36,21.6 39.6,19.2 44,19.2 Z" />
+
+    <!-- Chandrabindu (Chandra Moon Crescent) -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M35.2,10.4 C40,14.8 48,14.8 52.8,10.4 C50.8,13.2 45.6,14.8 40.8,13.6 C38.4,12.8 36.4,11.6 35.2,10.4 Z" />
+
+    <!-- Chandrabindu (Divine Consciousness Bindu Dot) -->
+    <path
+        android:fillColor="@color/gold_light"
+        android:pathData="M44,4.8 C45.8,4.8 47.2,6.2 47.2,8 C47.2,9.8 45.8,11.2 44,11.2 C42.2,11.2 40.8,9.8 40.8,8 C40.8,6.2 42.2,4.8 44,4.8 Z" />
+
 </vector>

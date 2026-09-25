@@ -21,8 +21,8 @@
         android:background="@color/surface_bg"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:itemIconTint="@color/gold_light"
-        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/text_gold_on_light"
+        app:itemTextColor="@color/text_primary_on_light"
         app:menu="@menu/main" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
