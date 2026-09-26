@@ -51,9 +51,9 @@ public class LanguageAdapter extends RecyclerView.Adapter<LanguageAdapter.ViewHo
         holder.rbLangSelected.setChecked(position == selectedIndex);
 
         if (position == selectedIndex) {
-            holder.tvLangNativeName.setTextColor(context.getResources().getColor(R.color.gold_light));
+            holder.tvLangNativeName.setTextColor(context.getResources().getColor(R.color.primary));
         } else {
-            holder.tvLangNativeName.setTextColor(context.getResources().getColor(R.color.white));
+            holder.tvLangNativeName.setTextColor(context.getResources().getColor(R.color.text_primary_on_light));
         }
 
         holder.itemView.setOnClickListener(v -> {

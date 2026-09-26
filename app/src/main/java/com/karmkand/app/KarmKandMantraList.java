@@ -99,8 +99,13 @@ public class KarmKandMantraList extends AppCompatActivity implements CategoryCli
             btnSearchToggle.setVisibility(View.GONE);
         }
 
-        mAdView = findViewById(R.id.adView);
+        getWindow().setStatusBarColor(getResources().getColor(R.color.surface_bg));
+        androidx.core.view.WindowInsetsControllerCompat insetsController = androidx.core.view.WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        if (insetsController != null) {
+            insetsController.setAppearanceLightStatusBars(true);
+        }
 
+        mAdView = findViewById(R.id.adView);
         if (UserMessagingPlatform.getConsentInformation(this).canRequestAds()
                 && Utility.getInstance().isInternetAvailable(this, false)) {
             mAdView.setVisibility(View.VISIBLE);
@@ -310,7 +315,7 @@ public class KarmKandMantraList extends AppCompatActivity implements CategoryCli
         boolean isFav = FavoritesManager.isFavorite(this, getFavoriteKey());
         if (isFav) {
             btnDevotionalFavorite.setImageResource(R.drawable.ic_favorite);
-            btnDevotionalFavorite.setColorFilter(getResources().getColor(R.color.gold_light));
+            btnDevotionalFavorite.setColorFilter(getResources().getColor(R.color.primary));
         } else {
             btnDevotionalFavorite.setImageResource(R.drawable.ic_favorite_border);
             btnDevotionalFavorite.setColorFilter(getResources().getColor(R.color.gold_accent));

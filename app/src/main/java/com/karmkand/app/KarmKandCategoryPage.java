@@ -143,8 +143,13 @@ public class KarmKandCategoryPage extends AppCompatActivity implements CategoryC
 			});
 		}
 
-		mAdView = findViewById(R.id.adView);
+		getWindow().setStatusBarColor(getResources().getColor(R.color.surface_bg));
+		androidx.core.view.WindowInsetsControllerCompat insetsController = androidx.core.view.WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+		if (insetsController != null) {
+			insetsController.setAppearanceLightStatusBars(true);
+		}
 
+		mAdView = findViewById(R.id.adView);
 		if (UserMessagingPlatform.getConsentInformation(this).canRequestAds()
 				&& utility.isInternetAvailable(this, false)) {
 			mAdView.setVisibility(View.VISIBLE);

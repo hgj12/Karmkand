@@ -94,6 +94,11 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initViews();
+        getWindow().setStatusBarColor(getResources().getColor(R.color.surface_bg));
+        androidx.core.view.WindowInsetsControllerCompat insetsController = androidx.core.view.WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        if (insetsController != null) {
+            insetsController.setAppearanceLightStatusBars(true);
+        }
         setupListeners();
         setupBackNavigation();
         requestConsentAndInitAds();
@@ -467,6 +472,9 @@ public class KarmKandMenu extends AppCompatActivity implements View.OnClickListe
 
     private void setupDrawer() {
         drawerLayout = findViewById(R.id.drawer_layout);
+        if (drawerLayout != null) {
+            drawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.surface_bg));
+        }
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
